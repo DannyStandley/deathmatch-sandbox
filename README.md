@@ -22,7 +22,7 @@ In this project, the state of the world counts as your save file, not your playe
 Simple. I find y as the forward easier to work with, but unity uses z as the forward. So I faked it.
 ## Do I have to build space stuff?
 No, although it was really designed for space settings, and so consequently all vehicles use the ship class.
-## Why use unity instead of godot or <insert favourite rendering engine here>
+## Why use unity instead of godot or insert favourite rendering engine here
 Okay to be honest, out of convenience and because I didn't think this project would get up to the point where it is.
 Also because godot was still in the early stages when I started.
 It in theory is portible to other engines, you just need to rewrite manager.cs to point to the correct functions or write a replacement for it in your language of choice that includes the necessary lua stuff. As long as lua is available and has the correct functions linked to it your game won't care what's doing all the heavy lifting.
