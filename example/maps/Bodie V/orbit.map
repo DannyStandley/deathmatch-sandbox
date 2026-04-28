@@ -1,0 +1,14 @@
+mapname maps/Bodie V/orbit.lua
+maplocation Bodie V orbit
+mapx 0
+mapy 0
+mapz 0
+maploadx -1000
+maploady -1000
+maploadz -1000
+maploadmaxx 1000
+maploadmaxy 1000
+maploadmaxz 1000
+mapstate runscript scripts/map/exterior.lua
+mapstate skybox maps/Bodie V/materials/orbit/material.mat
+mapstate bounddown maps/Bodie V/surface.lua

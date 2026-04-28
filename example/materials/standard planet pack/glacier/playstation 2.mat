@@ -1,0 +1,10 @@
+PS2
+texture
+_MainTex
+materials/standard planet pack/glacier/glacieralbedo.png
+texture
+_BumpMap
+materials/standard planet pack/glacier/glaciernormal.png
+texture
+_OcclusionMap
+materials/standard planet pack/glacier/glacierao.png

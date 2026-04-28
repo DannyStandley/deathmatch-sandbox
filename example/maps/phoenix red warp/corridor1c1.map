@@ -1,0 +1,24 @@
+mapname maps/phoenix red warp/corridor1c1.lua
+maplocation follow
+mapx 10
+mapy 51
+mapz 0
+maploadx -100
+maploady -40
+maploadz -100
+maploadmaxx 100
+maploadmaxy 50
+maploadmaxz 100
+mapstate dontsave
+mapstate object phoenix red warp
+mapstate runscript scripts/modules/clearing.lua
+mapstate orgmap maps/phoenix red warp/corridor1.map
+mapstate linkx 0
+mapstate linky 0
+mapstate linkz 0
+mapstate startx -1
+mapstate starty -1
+mapstate startz 0
+mapstate endx 10
+mapstate endy -1
+mapstate endz 6

@@ -1,0 +1,39 @@
+tts|on
+rate|20
+pitch|0
+volume|100
+voice|Default
+module|voxin
+graphicstype|Colonial Marines
+graphics|on
+resx|1024
+resy|768
+drawdist|1000
+quality|2
+framerate|60
+fov|60
+vsync|off
+fullscreenmode|1
+musicvolume|50
+startscript|scripts/welcome.lua
+save on exit|on
+hud|on
+hudcoords|on
+hudfps|on
+hudrank|on
+hudcomponents|on
+camcontrol|fixt flickstick
+key_forward|upArrow
+key_backward|downArrow
+key_sideright|rightArrow
+key_sideleft|leftArrow
+key_interact|Enter
+key_turnleft|A
+key_turnright|D
+key_lookup|W
+key_lookdown|S
+key_jump|Space
+key_run|R
+key_pfire|leftCTRL
+key_sfire|rightCTRL
+key_light|X

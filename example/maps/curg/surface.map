@@ -1,0 +1,24 @@
+mapname maps/curg/surface.lua
+maplocation curg
+mapx 0
+mapy 0
+mapz 0
+maploadx -1000
+maploady -1000
+maploadz -1000
+maploadmaxx 1000
+maploadmaxy 1000
+maploadmaxz 1000
+mapstate sound maps/curg/sounds/room1.ogg
+mapstate env dizzy
+mapstate steptype maps/curg/sounds/rock1
+mapstate object curg
+mapstate loadmap
+mapstate maps/curg/building1.map
+mapstate loadmap
+mapstate maps/curg/building1c1.map
+mapstate loadmap
+mapstate maps/curg/b1c2.map
+mapstate canseeweather
+mapstate boundup maps/curg/orbit.lua
+mapstate maxboundz 100000

@@ -1,0 +1,21 @@
+mapname maps/phoenix red warp/exterior.lua
+maplocation curg orbit
+mapx 0
+mapy 0
+mapz 0
+maploadx -1000
+maploady -1000
+maploadz -1000
+maploadmaxx 1000
+maploadmaxy 1000
+maploadmaxz 1000
+mapstate loadmap
+mapstate maps/phoenix red warp/docking1.map
+mapstate loadmap
+mapstate maps/phoenix red warp/baydoor1.map
+mapstate loadmap
+mapstate maps/phoenix red warp/docking1exit.map
+mapstate loadmap
+mapstate maps/phoenix red warp/corridor1.map
+mapstate object phoenix red warp
+mapstate runscript scripts/map/exterior.lua

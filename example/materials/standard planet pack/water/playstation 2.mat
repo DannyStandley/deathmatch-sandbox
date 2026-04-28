@@ -1,0 +1,13 @@
+PS2
+property
+_OcclusionStrength
+0.3
+texture
+_MainTex
+materials/standard planet pack/water/wateralbedo.png
+texture
+_BumpMap
+materials/standard planet pack/water/waternormal.png
+texture
+_OcclusionMap
+materials/standard planet pack/water/waterao.png

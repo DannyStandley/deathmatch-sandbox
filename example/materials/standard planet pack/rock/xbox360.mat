@@ -1,0 +1,16 @@
+Xbox360
+tile
+5
+5
+property
+_E3Power
+5
+texture
+_MainTex
+materials/standard planet pack/rock/rockalbedo.png
+texture
+_GrimeMap
+materials/standard planet pack/rock/rockgrayscale.png
+texture
+_OcclusionMap
+materials/standard planet pack/rock/rockao.png

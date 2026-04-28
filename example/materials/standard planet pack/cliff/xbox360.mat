@@ -1,0 +1,10 @@
+Xbox360
+texture
+_MainTex
+materials/standard planet pack/cliff/cliffalbedo.png
+texture
+_OcclusionMap
+materials/standard planet pack/cliff/cliffao.png
+texture
+_GrimeMap
+materials/standard planet pack/cliff/cliffgrayscale.png

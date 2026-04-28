@@ -1,0 +1,16 @@
+mapname maps/Bodie V/geosurface.lua
+maplocation Bodie V
+mapx 0
+mapy 0
+mapz 0
+maploadx -100
+maploady -100
+maploadz -100
+maploadmaxx 100
+maploadmaxy 70
+maploadmaxz 1000
+mapstate sound maps/Bodie V/sounds/room1.ogg
+mapstate steptype maps/Bodie V/sounds/rock1
+mapstate env dizzy
+mapstate dontsave
+mapstate object Bodie V

@@ -1,0 +1,20 @@
+mapname maps/phoenix red warp/baydoor1.lua
+maplocation follow
+mapx -1
+mapy -1
+mapz 0
+maploadx -100
+maploady -100
+maploadz -100
+maploadmaxx 100
+maploadmaxy 50
+maploadmaxz 100
+mapstate dontsave
+mapstate object phoenix red warp
+mapstate orgtheta 180
+mapstate lengthx 21
+mapstate lengthy -1
+mapstate lengthz 10
+mapstate material materials/standard metal pack/airlockdoor
+mapstate orient 0
+mapstate runscript scripts/modules/machine.lua

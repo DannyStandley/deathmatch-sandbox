@@ -1,0 +1,16 @@
+mapname maps/union station/vent1.lua
+maplocation union station
+mapx 10
+mapy 5
+mapz 0
+maploadx -10
+maploady -5
+maploadz -10
+maploadmaxx 50
+maploadmaxy 10
+maploadmaxz 6
+mapstate dontsave
+mapstate orgmap maps/union station/docking1.lua
+mapstate orgtheta 90
+mapstate object union station
+mapstate runscript scripts/modules/vent/vent.lua

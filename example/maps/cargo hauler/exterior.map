@@ -1,0 +1,18 @@
+mapname maps/cargo hauler/exterior.lua
+maplocation curg orbit
+mapx 0
+mapy 0
+mapz 0
+maploadx -1000000
+maploady -1000000
+maploadz -1000000
+maploadmaxx 1000000
+maploadmaxy 1000000
+maploadmaxz 1000000
+mapstate runscript scripts/map/exterior.lua
+mapstate loadmap
+mapstate maps/cargo hauler/airlock.map
+mapstate loadmap
+mapstate maps/cargo hauler/cargo bay.map
+mapstate loadmap
+mapstate maps/cargo hauler/bridge.map

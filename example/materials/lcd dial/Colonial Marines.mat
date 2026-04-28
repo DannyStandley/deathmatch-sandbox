@@ -1,0 +1,16 @@
+ColonialMarines
+property
+_E3Power
+20
+property
+_MistDensity
+0.1
+property
+_FogIntensity
+0.1
+texture
+_MainTex
+materials/lcd dial/dialalbedo.png
+texture
+_GrimeMap
+materials/lcd dial/dialgrayscale.png

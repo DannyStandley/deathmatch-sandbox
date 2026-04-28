@@ -1,0 +1,10 @@
+Xbox360
+texture
+_MainTex
+materials/standard planet pack/water/wateralbedo.png
+texture
+_GrimeMap
+materials/standard planet pack/water/watergrayscale.png
+texture
+_OcclusionMap
+materials/standard planet pack/water/waterao.png

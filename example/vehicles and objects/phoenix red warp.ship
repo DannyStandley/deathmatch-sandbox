@@ -1,0 +1,19 @@
+shipname phoenix red warp
+shipdir north
+shipaccell 100
+shipgalx -130
+shipgaly 100
+shipgalz 100
+shipx 0
+shipy 100
+shipz 0
+shiplocation maps/curg/orbit.lua
+shipmaxspeed 1000000
+shipspeed 0
+shipdesiredspeed 0
+shipenginesound sounds/engine2.ogg
+shippower 0
+shipdesiredpower 0
+shippitch 1
+shipmap maps/phoenix red warp/exterior.lua
+shipstate moveform 0.0001

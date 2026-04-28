@@ -1,0 +1,35 @@
+mapname maps/phoenix red warp/docking1.lua
+maplocation follow
+mapx 0
+mapy 0
+mapz 0
+maploadx -100
+maploady -100
+maploadz -100
+maploadmaxx 100
+maploadmaxy 60
+maploadmaxz 100
+mapstate dontsave
+mapstate object phoenix red warp
+mapstate runscript scripts/modules/rooms/custom.lua
+mapstate floor materials/standard metal pack/metal3
+mapstate ceeling materials/standard metal pack/metal3
+mapstate wall materials/standard metal pack/metal2
+mapstate maxx 20
+mapstate maxy 20
+mapstate maxz 10
+mapstate env arena
+mapstate sound sounds/room16.ogg
+mapstate steptype sounds/metal2
+mapstate loadmap
+mapstate maps/phoenix red warp/dockinglight.map
+mapstate loadmap
+mapstate maps/phoenix red warp/door1.map
+mapstate loadmap
+mapstate maps/phoenix red warp/lobby1.map
+mapstate loadmap
+mapstate maps/phoenix red warp/docking1l1.map
+mapstate loadmap
+mapstate maps/phoenix red warp/docking1clear.map
+mapstate loadmap
+mapstate maps/phoenix red warp/docking1entrance.map

@@ -1,0 +1,20 @@
+mapname maps/cargo hauler/airlock.lua
+maplocation follow
+mapx 0
+mapy 0
+mapz 0
+maploadx -100
+maploady -100
+maploadz -100
+maploadmaxx 100
+maploadmaxy 30
+maploadmaxz 100
+mapstate dontsave
+mapstate object cargo hauler
+mapstate sound maps/cargo hauler/sounds/room1.ogg
+mapstate env sewer_pipe
+mapstate steptype maps/cargo hauler/sounds/metal1
+mapstate loadmap
+mapstate maps/cargo hauler/door1.map
+mapstate loadmap
+mapstate maps/cargo hauler/door2.map

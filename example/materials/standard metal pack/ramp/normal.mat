@@ -1,0 +1,31 @@
+Standard
+color
+_EmissionColor
+1
+1
+1
+1
+texture
+_MainTex
+materials/standard metal pack/ramp/rampalbedo.png
+texture
+_BumpMap
+materials/standard metal pack/ramp/rampnormal.png
+texture
+_EmissionMap
+materials/standard metal pack/ramp/rampgrayscale.png
+texture
+_OcclusionMap
+materials/standard metal pack/ramp/rampao.png
+property
+_Metallic
+0.7
+property
+_Smoothness
+1.0
+property
+_Glossiness
+0.5
+property
+_Occlusion
+1.0

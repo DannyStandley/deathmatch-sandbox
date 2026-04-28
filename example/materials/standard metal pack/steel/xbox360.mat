@@ -1,0 +1,10 @@
+Xbox360
+texture
+_MainTex
+materials/standard metal pack/steel/steelalbedo.png
+texture
+_GrimeMap
+materials/standard metal pack/steel/steelgrayscale.png
+texture
+_OcclusionMap
+materials/standard metal pack/steel/steelao.png

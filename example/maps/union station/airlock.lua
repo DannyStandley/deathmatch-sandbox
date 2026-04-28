@@ -1,0 +1,60 @@
+mat1 = manager:loadmaterial("materials/standard metal pack/metal/"..manager:getsetting("graphicstype")..".mat")
+mat2 = manager:loadmaterial("materials/standard metal pack/metal4/"..manager:getsetting("graphicstype")..".mat")
+mat3 = manager:loadmaterial("materials/standard metal pack/metal5/"..manager:getsetting("graphicstype")..".mat")
+mat4 = manager:loadmaterial("materials/standard metal pack/glass/"..manager:getsetting("graphicstype")..".mat")
+cube = mapfunctions:createcube()
+plane = mapfunctions:createplane()
+mapfunctions:spawnobjects(0, 0, 0, 0, 50, 0, 0, 0, 0, plane, 0, mapname, mat1)
+mapfunctions:changescale(plane, 0.05, 0.3, 0.05)
+mapfunctions:spawnobjects(0, 0, 1, 0, 50, 1, 180, 0, 0, plane, 1, mapname, mat4)
+for a=-1, 50 do
+for m=0, 1 do
+obj = mapfunctions:spawnobject(-1, a, m, 0, 270, 0, cube, 1, mapname, mat3)
+mapfunctions:changescale(obj, 0.2, 1, 0.2)
+obj = mapfunctions:spawnobject(-1, a -0.3, m +0, 45, 270, 0, cube, 1, mapname, mat3)
+mapfunctions:changescale(obj, 0.4, 0.5, 0.4)
+obj = mapfunctions:spawnobject(-1, a +0.3, m +0, 45, 270, 0, cube, 1, mapname, mat3)
+mapfunctions:changescale(obj, 0.4, 0.5, 0.4)
+end
+end
+for a=-1, 50 do
+for m=0, 1 do
+obj = mapfunctions:spawnobject(1, a, m, 0, 90, 0, cube, 1, mapname, mat3)
+mapfunctions:changescale(obj, 0.2, 1, 0.2)
+obj = mapfunctions:spawnobject(1, a -0.3, m +0, 45, 90, 0, cube, 1, mapname, mat3)
+mapfunctions:changescale(obj, 0.4, 0.5, 0.4)
+obj = mapfunctions:spawnobject(1, a +0.3, m +0, 45, 90, 0, cube, 1, mapname, mat3)
+mapfunctions:changescale(obj, 0.4, 0.5, 0.4)
+end
+end
+mapfunctions:spawnlocation(0, 50, 0, 0, 50, 1, mapname, mapname)
+mapfunctions:spawnrunscript(0, 51, 0, 0, 51, 1, "scripts/map/exit.lua", mapname)
+mapfunctions:spawnlocation(0, -1, 0, 0, -1, 1, mapname, mapname)
+mapfunctions:spawnrunscript(0, -2, 0, 0, -2, 1, "scripts/map/exit.lua", mapname)
+if mapfunctions:checkstate(manager:findmap(mapname), "forward")==1 then
+mapfunctions:spawnobject(0, 51, 1, 0, 0, 0, cube, 1, mapname, mat3)
+else
+mapfunctions:spawnobject(0, -1, 1, 0, 0, 0, cube, 1, mapname, mat3)
+end
+obj = mapfunctions:getobj(0, 45, 1, "plane", manager:findmap(mapname))
+mapfunctions:attachlight(obj, "point")
+mapfunctions:setlightintensity(obj, 20)
+mapfunctions:setlightcolor(obj, 1, 0.2, 0.3, 1)
+obj = mapfunctions:getobj(0, 35, 1, "plane", manager:findmap(mapname))
+mapfunctions:attachlight(obj, "point")
+mapfunctions:setlightintensity(obj, 20)
+mapfunctions:setlightcolor(obj, 1, 0.2, 0.3, 1)
+obj = mapfunctions:getobj(0, 25, 1, "plane", manager:findmap(mapname))
+mapfunctions:attachlight(obj, "point")
+mapfunctions:setlightintensity(obj, 20)
+mapfunctions:setlightcolor(obj, 1, 0.2, 0.3, 1)
+obj = mapfunctions:getobj(0, 15, 1, "plane", manager:findmap(mapname))
+mapfunctions:attachlight(obj, "point")
+mapfunctions:setlightintensity(obj, 20)
+mapfunctions:setlightcolor(obj, 1, 0.2, 0.3, 1)
+obj = mapfunctions:getobj(0, 5, 1, "plane", manager:findmap(mapname))
+mapfunctions:attachlight(obj, "point")
+mapfunctions:setlightintensity(obj, 20)
+mapfunctions:setlightcolor(obj, 1, 0.2, 0.3, 1)
+mapfunctions:destroyobj(plane)
+mapfunctions:destroyobj(cube)

@@ -1,0 +1,17 @@
+mapname combatmaps/complex/b1spawn.lua
+maplocation combat test complex
+mapx 0
+mapy 0
+mapz 0
+maploadx -100
+maploady -100
+maploadz -100
+maploadmaxx 100
+maploadmaxy 100
+maploadmaxz 100
+mapstate runscript scripts/modules/location.lua
+mapstate spawnpoint
+mapstate lengthx 10
+mapstate lengthy 0
+mapstate lengthz 0
+mapstate orgmap combatmaps/complex/hangar.lua

@@ -1,0 +1,26 @@
+map
+mapname combatmaps/complex/hangar.lua
+maplocation combat test complex
+mapx 0
+mapy 0
+mapz 0
+maploadx -100
+maploady -100
+maploadz -100
+maploadmaxx 100
+maploadmaxy 50
+maploadmaxz 100
+mapstate runscript scripts/modules/rooms/ship1.lua
+mapstate nofile
+mapstate dontsave
+mapstate sound combatmaps/complex/room1.ogg
+mapstate steptype combatmaps/complex/normal
+mapstate env arena
+mapstate loadmap
+mapstate combatmaps/complex/door1.map
+mapstate loadmap
+mapstate combatmaps/complex/b1entrance.map
+mapstate loadmap
+mapstate combatmaps/complex/b1exit.map
+mapstate powered
+endmap

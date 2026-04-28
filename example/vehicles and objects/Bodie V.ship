@@ -1,0 +1,21 @@
+shipname Bodie V
+shipdir north
+shipaccell 100
+shipgalx 81198
+shipgaly 12497
+shipgalz 2009
+shipx 0
+shipy 0
+shipz 0
+shiplocation 
+shipmaxspeed 0
+shipspeed 0
+shipdesiredspeed 0
+shipenginesound 
+shippower 0
+shipdesiredpower NaN
+shippitch 1
+shipmap maps/Bodie V/orbit.lua
+shipmap maps/Bodie V/surface.lua
+shipstate type engage point
+shipstate moveform 0.0001

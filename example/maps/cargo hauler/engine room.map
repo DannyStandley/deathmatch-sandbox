@@ -1,0 +1,18 @@
+mapname maps/cargo hauler/engine room.lua
+maplocation follow
+mapx 6
+mapy 6
+mapz 0
+maploadx -6
+maploady -100
+maploadz -100
+maploadmaxx 100
+maploadmaxy 100
+maploadmaxz 100
+mapstate dontsave
+mapstate object cargo hauler
+mapstate env stone_corridor
+mapstate steptype maps/cargo hauler/sounds/metal1
+mapstate sound maps/cargo hauler/sounds/room3.ogg
+mapstate loadmap
+mapstate maps/cargo hauler/fusion core.map

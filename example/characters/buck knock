@@ -1,0 +1,17 @@
+name buck knock
+state speed 117
+state runspeed 120
+state hturn 150
+state swimspeed 30
+state jumpspeed 1000
+state jumpheight 500
+state maxhealth 10.0
+state health 10.0
+state item|scripts/items/light source/spawn.lua:Firestar industrys power light:5:20:1:1:1:1
+state running
+location maps/curg/building1.lua
+x 0.1600075
+y 0.08000279
+z 0
+theta 1.5
+lookup 0

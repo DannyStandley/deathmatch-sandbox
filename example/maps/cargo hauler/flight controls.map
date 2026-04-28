@@ -1,0 +1,15 @@
+mapname maps/cargo hauler/flight controls.lua
+maplocation follow
+mapx 3
+mapy 27
+mapz 0
+maploadx -20
+maploady -20
+maploadz -20
+maploadmaxx 20
+maploadmaxy 20
+maploadmaxz 20
+mapstate runscript scripts/modules/omni flight system/startup.lua
+mapstate dontsave
+mapstate object cargo hauler
+mapstate orgtheta 0

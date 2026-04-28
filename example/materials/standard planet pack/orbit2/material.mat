@@ -1,0 +1,25 @@
+Skybox/6 Sided
+color
+_Tint
+0.5
+0.2
+0.3
+1
+texture
+_FrontTex
+materials/standard planet pack/orbit2/orbitfront.png
+texture
+_BackTex
+materials/standard planet pack/orbit2/orbitback.png
+texture
+_LeftTex
+materials/standard planet pack/orbit2/orbitleft.png
+texture
+_RightTex
+materials/standard planet pack/orbit2/orbitright.png
+texture
+_UpTex
+materials/standard planet pack/orbit2/orbitup.png
+texture
+_DownTex
+materials/standard planet pack/orbit2/orbitdown.png

@@ -1,0 +1,20 @@
+mapname maps/Bodie V/surface.lua
+maplocation Bodie V
+mapx 0
+mapy 0
+mapz 0
+maploadx -1000000
+maploady -1000000
+maploadz -1000000
+maploadmaxx 1000000
+maploadmaxy 1000000
+maploadmaxz 1000000
+mapstate loadmap
+mapstate maps/Bodie V/geosurface.map
+mapstate loadmap
+mapstate maps/Bodie V/geoplant/entrance.map
+mapstate loadmap
+mapstate maps/Bodie V/geoplant/tunnel1.map
+mapstate object Bodie V
+mapstate maxboundz 100000
+mapstate boundup maps/Bodie V/orbit.map

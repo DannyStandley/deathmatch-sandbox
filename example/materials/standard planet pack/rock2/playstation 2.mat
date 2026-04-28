@@ -1,0 +1,16 @@
+PS2
+tile
+10
+10
+property
+_OcclusionStrength
+1.0
+texture
+_MainTex
+materials/standard planet pack/rock2/rockalbedo.png
+texture
+_BumpMap
+materials/standard planet pack/rock2/rocknormal.png
+texture
+_OcclusionMap
+materials/standard planet pack/rock2/rockao.png

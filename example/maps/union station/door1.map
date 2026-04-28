@@ -1,0 +1,16 @@
+mapname maps/union station/door1.lua
+maplocation union station
+mapx 0
+mapy 10
+mapz 0
+maploadx -20
+maploady -20
+maploadz -20
+maploadmaxx 20
+maploadmaxy 20
+maploadmaxz 6
+mapstate dontsave
+mapstate object union station
+mapstate orgmap maps/union station/docking1.lua
+mapstate orgtheta 0
+mapstate runscript scripts/modules/door/door.lua

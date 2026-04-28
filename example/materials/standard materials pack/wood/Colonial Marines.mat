@@ -1,0 +1,13 @@
+ColonialMarines
+property
+_FogIntensity
+0.1
+property
+_MistDensity
+0.1
+texture
+_MainTex
+materials/standard materials pack/wood/woodalbedo.png
+texture
+_GrimeMap
+materials/standard materials pack/wood/woodgrayscale.png

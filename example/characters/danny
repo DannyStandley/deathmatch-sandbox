@@ -1,0 +1,15 @@
+name danny
+state swimspeed 45
+state hturn 100
+state speed 100
+state runspeed 120
+state jumpspeed 150
+state jumpheight 150
+state maxhealth 10.0
+state health 10.0
+location maps/phoenix red warp/docking1.lua
+x 10
+y -0.2000068
+z 0
+theta 1
+lookup 0

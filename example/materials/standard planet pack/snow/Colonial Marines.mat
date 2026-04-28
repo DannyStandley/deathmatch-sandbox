@@ -1,0 +1,10 @@
+ColonialMarines
+property
+_E3Power
+10
+texture
+_MainTex
+materials/standard planet pack/snow/snowalbedo.png
+texture
+_GrimeMap
+materials/standard planet pack/snow/snowgrayscale.png

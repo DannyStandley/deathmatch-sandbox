@@ -1,0 +1,10 @@
+PS2
+texture
+_MainTex
+materials/standard materials pack/wood/woodalbedo.png
+texture
+_BumpMap
+materials/standard materials pack/wood/woodnormal.png
+texture
+_OcclusionMap
+materials/standard materials pack/wood/woodao.png

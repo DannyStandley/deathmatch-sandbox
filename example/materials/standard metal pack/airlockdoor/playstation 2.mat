@@ -1,0 +1,13 @@
+PS2
+property
+_OcclusionStrength
+1.0
+texture
+_MainTex
+materials/standard metal pack/airlockdoor/dooralbedo.png
+texture
+_BumpMap
+materials/standard metal pack/airlockdoor/doornormal.png
+texture
+_OcclusionMap
+materials/standard metal pack/airlockdoor/doorao.png

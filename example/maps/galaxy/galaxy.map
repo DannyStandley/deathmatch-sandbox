@@ -1,0 +1,14 @@
+mapname maps/galaxy/galaxy.lua
+maplocation galaxy
+mapx 0
+mapy 0
+mapz 0
+maploadx -1000000
+maploady -1000000
+maploadz -1000000
+maploadmaxx 1000000
+maploadmaxy 1000000
+maploadmaxz 1000000
+mapstate sound sounds/space.ogg
+mapstate env dizzy
+mapstate dontsave

@@ -1,0 +1,34 @@
+Xbox360
+tile
+10
+10
+color
+_FogColor
+0.9
+0.3
+0.1
+1
+property
+_FogIntensity
+0.5
+property
+_MistDensity
+0.1
+property
+_MetallicEdge
+0
+property
+_Glossiness
+0
+property
+_E3Power
+2
+texture
+_OcclusionMap
+materials/standard planet pack/rock2/rockao.png
+texture
+_MainTex
+materials/standard planet pack/rock2/rockalbedo.png
+texture
+_GrimeMap
+materials/standard planet pack/rock2/rockgrayscale.png

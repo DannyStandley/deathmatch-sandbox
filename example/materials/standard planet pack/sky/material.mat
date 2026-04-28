@@ -1,0 +1,46 @@
+Skybox/Weather
+color
+_Tint
+1
+1
+1
+1
+texture
+_FrontTex
+materials/standard planet pack/sky/skyfront.png
+texture
+_BackTex
+materials/standard planet pack/sky/skyback.png
+texture
+_LeftTex
+materials/standard planet pack/sky/skyleft.png
+texture
+_RightTex
+materials/standard planet pack/sky/skyright.png
+texture
+_UpTex
+materials/standard planet pack/sky/skyup.png
+texture
+_DownTex
+materials/standard planet pack/sky/skydown.png
+property
+_RainSpeed
+0.3
+property
+_RainIntensity
+1.0
+texture
+_RainTex
+materials/standard planet pack/sky/particals.png
+texture
+_WindTex
+materials/standard planet pack/sky/wind.png
+vector2
+_RainScale
+1.5
+1.5
+vector3
+_WindSpeed
+0.4
+0.5
+0

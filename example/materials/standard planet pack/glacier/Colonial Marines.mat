@@ -1,0 +1,10 @@
+ColonialMarines
+property
+_E3Power
+5
+texture
+_MainTex
+materials/standard planet pack/glacier/glacieralbedo.png
+texture
+_GrimeMap
+materials/standard planet pack/glacier/glaciergrayscale.png

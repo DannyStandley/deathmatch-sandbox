@@ -1,0 +1,19 @@
+mapname maps/union station/window2.lua
+maplocation union station
+mapx 30
+mapy 20
+mapz 1
+maploadx -31
+maploady -15
+maploadz -100
+maploadmaxx 100
+maploadmaxy 30
+maploadmaxz 100
+mapstate orgmap maps/union station/hub.lua
+mapstate orgtheta 90
+mapstate destroyx 30
+mapstate destroyy 20
+mapstate destroyz 1
+mapstate dontsave
+mapstate object union station
+mapstate runscript scripts/modules/sidewindow.lua

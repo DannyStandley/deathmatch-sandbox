@@ -1,0 +1,17 @@
+mapname maps/curg/b1corridorentrance.map
+maplocation curg
+mapx 26
+mapy -15
+mapz 0
+maploadx -10
+maploady -10
+maploadz -10
+maploadmaxx 10
+maploadmaxy 10
+maploadmaxz 10
+mapstate runscript scripts/modules/location.lua
+mapstate orgmap maps/curg/b1corridor.lua
+mapstate lengthx 0
+mapstate lengthy 0
+mapstate lengthz 0
+mapstate dontsave

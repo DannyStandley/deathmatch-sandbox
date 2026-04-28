@@ -1,0 +1,10 @@
+Xbox360
+texture
+_MainTex
+materials/standard metal pack/ramp/rampalbedo.png
+texture
+_GrimeMap
+materials/standard metal pack/ramp/rampgrayscale.png
+texture
+_OcclusionMap
+materials/standard metal pack/ramp/rampao.png

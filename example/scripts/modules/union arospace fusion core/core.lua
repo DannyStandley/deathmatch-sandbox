@@ -1,0 +1,6 @@
+foundmap = manager:findmap(mapname)
+orgtheta = luafunctions:tofloatstr(mapfunctions:checkstatetext(foundmap, "orgtheta"))
+fusionmat = manager:loadmaterial("scripts/modules/union arospace fusion core/"..manager:getsetting("graphicstype")..".mat")
+cube = mapfunctions:createcube()
+obj = mapfunctions:spawnobject(0, 0, 0, 0, orgtheta, 0, cube, 1, mapname, fusionmat)
+mapfunctions:destroyobj(cube)

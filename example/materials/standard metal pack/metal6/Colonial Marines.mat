@@ -1,0 +1,25 @@
+ColonialMarines
+tile
+5
+5
+property
+_FogIntensity
+0.3
+property
+_MistDensity
+0.1
+color
+_FogColor
+0.8
+0.8
+0.8
+1
+property
+_MetallicEdge
+1.0
+texture
+_MainTex
+materials/standard metal pack/metal6/metalalbedo.png
+texture
+_GrimeMap
+materials/standard metal pack/metal6/metalgrayscale.png

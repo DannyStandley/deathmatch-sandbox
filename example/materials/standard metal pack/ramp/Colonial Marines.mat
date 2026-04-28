@@ -1,0 +1,13 @@
+ColonialMarines
+property
+_MistDensity
+0.1
+property
+_FogIntensity
+0.1
+texture
+_MainTex
+materials/standard metal pack/ramp/rampalbedo.png
+texture
+_GrimeMap
+materials/standard metal pack/ramp/rampgrayscale.png

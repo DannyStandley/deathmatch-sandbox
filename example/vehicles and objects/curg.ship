@@ -1,0 +1,21 @@
+shipname curg
+shipdir north
+shipaccell 100
+shipgalx -130
+shipgaly 100
+shipgalz 100
+shipx 0
+shipy 0
+shipz 0
+shiplocation 
+shipmaxspeed 0
+shipspeed 0
+shipdesiredspeed 0
+shipenginesound 
+shippower 0
+shipdesiredpower NaN
+shippitch 1
+shipmap maps/curg/orbit.lua
+shipmap maps/curg/surface.lua
+shipstate type engage point
+shipstate moveform 0.0001

@@ -1,0 +1,16 @@
+mapname maps/union station/door6.lua
+maplocation union station
+mapx 20
+mapy 103
+mapz 0
+maploadx -100
+maploady -52
+maploadz -100
+maploadmaxx 100
+maploadmaxy 52
+maploadmaxz 100
+mapstate object union station
+mapstate dontsave
+mapstate orgmap maps/union station/airlock2.lua
+mapstate orgtheta 0
+mapstate runscript scripts/modules/door/door.lua

@@ -1,0 +1,13 @@
+Xbox360
+property
+_E3Power
+5
+texture
+_MainTex
+materials/standard planet pack/glacier/glacieralbedo.png
+texture
+_OcclusionMap
+materials/standard planet pack/glacier/glacierao.png
+texture
+_GrimeMap
+materials/standard planet pack/glacier/glaciergrayscale.png

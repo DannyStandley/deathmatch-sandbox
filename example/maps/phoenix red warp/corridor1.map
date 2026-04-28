@@ -1,0 +1,25 @@
+mapname maps/phoenix red warp/corridor1.lua
+maplocation follow
+mapx 11
+mapy 51
+mapz 0
+maploadx -100
+maploady -40
+maploadz -100
+maploadmaxx 100
+maploadmaxy 50
+maploadmaxz 100
+mapstate env sewer_pipe
+mapstate sound sounds/room2.ogg
+mapstate steptype sounds/metal1
+mapstate dontsave
+mapstate object phoenix red warp
+mapstate runscript scripts/modules/rooms/custom.lua
+mapstate floor materials/standard metal pack/metal
+mapstate ceeling materials/standard metal pack/metal3
+mapstate wall materials/standard metal pack/steel
+mapstate maxx 10
+mapstate maxy 10
+mapstate maxz 3
+mapstate loadmap
+mapstate maps/phoenix red warp/corridor1c1.map

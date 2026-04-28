@@ -1,0 +1,18 @@
+mapname maps/curg/building1entrance.lua
+maplocation curg
+mapx 15
+mapy -20
+mapz 0
+maploadx -100
+maploady -100
+maploadz -100
+maploadmaxx 10
+maploadmaxy 100
+maploadmaxz 100
+mapstate runscript scripts/modules/location.lua
+mapstate dontsave
+mapstate object curg
+mapstate orgmap maps/curg/building1.lua
+mapstate lengthx 0
+mapstate lengthy 10
+mapstate lengthz 6

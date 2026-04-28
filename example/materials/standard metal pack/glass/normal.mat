@@ -1,0 +1,19 @@
+Standard
+texture
+_MainTex
+materials/standard metal pack/glass/glassalbedo.png
+texture
+_BumpMap
+materials/standard metal pack/glass/glassnormal.png
+texture
+_OcclusionMap
+materials/standard metal pack/glass/glassao.png
+texture
+_EmissionMap
+materials/standard metal pack/glass/glassgrayscale.png
+color
+_EmissionColor
+1
+1
+1
+1

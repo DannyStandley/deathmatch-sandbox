@@ -1,0 +1,6 @@
+foundmap = manager:findmap(mapname)
+orgmap = manager:findmap(mapfunctions:checkstatetext(foundmap, "orgmap"))
+lengthx = luafunctions:tofloatstr(mapfunctions:checkstatetext(foundmap, "lengthx"))
+lengthy = luafunctions:tofloatstr(mapfunctions:checkstatetext(foundmap, "lengthy"))
+lengthz = luafunctions:tofloatstr(mapfunctions:checkstatetext(foundmap, "lengthz"))
+mapfunctions:spawnlocation(0, 0, 0, 0 +lengthx, 0 +lengthy, 0 +lengthz, orgmap.name, mapname)

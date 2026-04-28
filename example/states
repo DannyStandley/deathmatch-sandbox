@@ -1,0 +1,7 @@
+powered combatmaps/complex/hangar.lua
+rank 1
+upgradecomponents 10
+map|Complex:1:combatmaps/complex/spawn.lua:The test complex map, consisting of nothing particularly interesting.:
+gametypes Slaughter|Team slaughter|Capture the flag
+powered maps/curg/building1.lua
+powered maps/phoenix red warp/docking1.lua

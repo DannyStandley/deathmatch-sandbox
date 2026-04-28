@@ -1,0 +1,10 @@
+Xbox360
+texture
+_MainTex
+materials/lcd dial/dialalbedo.png
+texture
+_OcclusionMap
+materials/lcd dial/dialao.png
+texture
+_GrimeMap
+materials/lcd dial/dialgrayscale.png

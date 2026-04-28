@@ -1,0 +1,10 @@
+PS2
+texture
+_MainTex
+materials/standard metal pack/ramp/rampalbedo.png
+texture
+_BumpMap
+materials/standard metal pack/ramp/rampnormal.png
+texture
+_OcclusionMap
+materials/standard metal pack/ramp/rampao.png

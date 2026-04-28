@@ -1,0 +1,13 @@
+PS2
+property
+_OcclusionStrength
+1.0
+texture
+_MainTex
+scripts/modules/door/dooralbedo.png
+texture
+_BumpMap
+scripts/modules/door/doornormal.png
+texture
+_OcclusionMap
+scripts/modules/door/doorao.png

@@ -1,0 +1,25 @@
+ColonialMarines
+color
+_FogColor
+0.7
+0.5
+0.3
+1
+property
+_FogDensity
+0.5
+property
+_MistDensity
+0.5
+property
+_MetallicEdge
+1.0
+property
+_Glossiness
+0.5
+texture
+_MainTex
+materials/standard planet pack/water/wateralbedo.png
+texture
+_GrimeMap
+materials/standard planet pack/water/watergrayscale.png

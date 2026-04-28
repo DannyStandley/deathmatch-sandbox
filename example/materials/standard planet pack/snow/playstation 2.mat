@@ -1,0 +1,10 @@
+PS2
+texture
+_MainTex
+materials/standard planet pack/snow/snowalbedo.png
+texture
+_BumpMap
+materials/standard planet pack/snow/snownormal.png
+texture
+_OcclusionMap
+materials/standard planet pack/snow/snowao.png

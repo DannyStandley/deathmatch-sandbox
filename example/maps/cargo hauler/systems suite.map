@@ -1,0 +1,18 @@
+mapname maps/cargo hauler/systems suite.map
+maplocation follow
+mapx 3
+mapy 27
+mapz 0
+maploadx -50
+maploady -50
+maploadz -50
+maploadmaxx 50
+maploadmaxy 50
+maploadmaxz 50
+mapstate dontsave
+mapstate runscript scripts/modules/omni systems suite.lua
+mapstate orgtheta 0
+mapstate object cargo hauler
+mapstate spawnx 0.2
+mapstate spawny 0
+mapstate spawnz 0.1

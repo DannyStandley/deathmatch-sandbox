@@ -1,0 +1,16 @@
+mapname maps/Bodie V/geoplant/tunnel1.lua
+maplocation Bodie V
+mapx 6
+mapy 67
+mapz 0
+maploadx -20
+maploady -20
+maploadz -20
+maploadmaxx 50
+maploadmaxy 100
+maploadmaxz 10
+mapstate steptype maps/Bodie V/sounds/rock1
+mapstate env dizzy
+mapstate sound maps/Bodie V/sounds/room2.ogg
+mapstate dontsave
+mapstate object Bodie V

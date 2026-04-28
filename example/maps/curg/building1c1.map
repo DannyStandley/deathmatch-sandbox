@@ -1,0 +1,23 @@
+mapname maps/curg/building1c1.lua
+maplocation curg
+mapx 14
+mapy -20
+mapz 0
+maploadx -15
+maploady -15
+maploadz -100
+maploadmaxx 15
+maploadmaxy 15
+maploadmaxz 100
+mapstate dontsave
+mapstate object curg
+mapstate startx 14
+mapstate starty 29
+mapstate startz 0
+mapstate endx 25
+mapstate endy 41
+mapstate endz 0
+mapstate linkx 0
+mapstate linky -51
+mapstate linkz 0
+mapstate runscript scripts/modules/clearing.lua

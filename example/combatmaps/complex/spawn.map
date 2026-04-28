@@ -1,0 +1,29 @@
+mapname combatmaps/complex/spawn.lua
+maplocation combat test complex
+mapx 0
+mapy 0
+mapz 0
+maploadx -1000000
+maploady -1000000
+maploadz -1000000
+maploadmaxx 1000000
+maploadmaxy 1000000
+maploadmaxz 1000000
+mapstate nofile
+mapstate dontsave
+mapstate loadmap
+mapstate combatmaps/complex/hangar.map
+mapstate loadmap
+mapstate combatmaps/complex/outside.map
+mapstate loadmap
+mapstate combatmaps/complex/sun.map
+mapstate loadmap
+mapstate combatmaps/complex/glacier1.map
+mapstate loadmap
+mapstate combatmaps/complex/glacier2.map
+mapstate loadmap
+mapstate combatmaps/complex/glacier3.map
+mapstate runscript scripts/map/exterior.lua
+mapstate skybox materials/standard planet pack/sky/material.mat
+mapstate loadmap
+mapstate combatmaps/complex/b1spawn.map

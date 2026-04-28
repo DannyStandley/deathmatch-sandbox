@@ -1,0 +1,13 @@
+PS2
+property
+_OcclusionStrength
+1.0
+texture
+_MainTex
+scripts/modules/vent/ventalbedo.png
+texture
+_BumpMap
+scripts/modules/vent/ventnormal.png
+texture
+_OcclusionMap
+scripts/modules/vent/ventao.png

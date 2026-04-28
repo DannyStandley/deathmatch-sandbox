@@ -1,0 +1,22 @@
+mapname maps/curg/b1power.lua
+maplocation curg
+mapx 20
+mapy -10
+mapz 1
+maploadx -10
+maploady -10
+maploadz -10
+maploadmaxx 10
+maploadmaxy 10
+maploadmaxz 10
+mapstate spawnx 0.35
+mapstate spawny -0.5
+mapstate spawnz -0.5
+mapstate buttonscript scripts/modules/rooms/ship1power.lua
+mapstate orgmap maps/curg/building1.lua
+mapstate statetype manager
+mapstate state powered maps/curg/building1.lua
+mapstate dontsave
+mapstate orgtheta 0
+mapstate object curg
+mapstate runscript scripts/modules/toggle button/start.lua

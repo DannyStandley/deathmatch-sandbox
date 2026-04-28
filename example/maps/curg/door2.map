@@ -1,0 +1,20 @@
+mapname maps/curg/door2.lua
+maplocation curg
+mapx 25
+mapy -15
+mapz 0
+maploadx -20
+maploady -20
+maploadz -100
+maploadmaxx 50
+maploadmaxy 20
+maploadmaxz 100
+mapstate runscript scripts/modules/door/door.lua
+mapstate side
+mapstate object curg
+mapstate orgmap maps/curg/building1.lua
+mapstate destroyx 10
+mapstate destroyy 5
+mapstate destroyz 0
+mapstate dontsave
+mapstate orgtheta 90

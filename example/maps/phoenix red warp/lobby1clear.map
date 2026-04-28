@@ -1,0 +1,24 @@
+mapname maps/phoenix red warp/lobby1clear.lua
+maplocation follow
+mapx 0
+mapy 20
+mapz 0
+maploadx -100
+maploady -50
+maploadz -100
+maploadmaxx 100
+maploadmaxy 50
+maploadmaxz 100
+mapstate runscript scripts/modules/clearing.lua
+mapstate object phoenix red warp
+mapstate dontsave
+mapstate orgmap maps/phoenix red warp/lobby1.lua
+mapstate startx -1
+mapstate starty -1
+mapstate startz 0
+mapstate endx 20
+mapstate endy -1
+mapstate endz 10
+mapstate linkx 0
+mapstate linky 0
+mapstate linkz 0

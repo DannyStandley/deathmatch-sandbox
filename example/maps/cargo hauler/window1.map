@@ -1,0 +1,19 @@
+mapname maps/cargo hauler/window1.lua
+maplocation follow
+mapx -1
+mapy 12
+mapz 1
+maploadx -100
+maploady -7
+maploadz -100
+maploadmaxx 100
+maploadmaxy 10
+maploadmaxz 100
+mapstate runscript scripts/modules/sidewindow.lua
+mapstate dontsave
+mapstate orgtheta 270
+mapstate object cargo hauler
+mapstate destroyx -1
+mapstate destroyy 5
+mapstate destroyz 1
+mapstate orgmap maps/cargo hauler/cargo bay.lua

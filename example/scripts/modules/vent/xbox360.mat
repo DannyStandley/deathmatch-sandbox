@@ -1,0 +1,10 @@
+Xbox360
+texture
+_MainTex
+scripts/modules/vent/ventalbedo.png
+texture
+_GrimeMap
+scripts/modules/vent/ventgrayscale.png
+texture
+_OcclusionMap
+scripts/modules/vent/ventao.png

@@ -1,0 +1,16 @@
+name test
+state swimspeed 50
+state speed 100
+state runspeed 150
+state hturn 300
+state jumpheight 80
+state jumpspeed 200
+state maxhealth 10.0
+state health 10.0
+state running
+location maps/cargo hauler/bridge.lua
+x 3
+y 8.100003
+z 0
+theta 3
+lookup 0

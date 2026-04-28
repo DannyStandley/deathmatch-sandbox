@@ -1,0 +1,10 @@
+Xbox360
+texture
+_MainTex
+materials/standard materials pack/wood/woodalbedo.png
+texture
+_GrimeMap
+materials/standard materials pack/wood/woodgrayscale.png
+texture
+_OcclusionMap
+materials/standard materials pack/wood/woodao.png

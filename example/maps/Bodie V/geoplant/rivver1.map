@@ -1,0 +1,18 @@
+mapname maps/Bodie V/geoplant/rivver1.lua
+maplocation Bodie V
+mapx 6
+mapy 77
+mapz -10
+maploadx -50
+maploady -20
+maploadz -10
+maploadmaxx 50
+maploadmaxy 100
+maploadmaxz 10
+mapstate dontsave
+mapstate env arena
+mapstate steptype maps/Bodie V/sounds/water
+mapstate sound maps/Bodie V/sounds/room2.ogg
+mapstate object Bodie V
+mapstate loadmap
+mapstate maps/Bodie V/geoplant/tunnel1.map

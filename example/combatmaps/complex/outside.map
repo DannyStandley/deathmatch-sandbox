@@ -1,0 +1,19 @@
+map
+mapname combatmaps/complex/outside.lua
+maplocation combat test complex
+mapx 0
+mapy 11
+mapz 0
+maploadx -10
+maploady -10
+maploadz 0
+maploadmaxx 20
+maploadmaxy 50
+maploadmaxz 50
+mapstate dontsave
+mapstate nofile
+mapstate runscript scripts/modules/rooms/snow1.lua
+mapstate sound combatmaps/complex/room2.ogg
+mapstate env cortyard
+mapstate steptype combatmaps/complex/snow
+endmap

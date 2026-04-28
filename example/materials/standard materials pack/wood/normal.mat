@@ -1,0 +1,19 @@
+Standard
+color
+_EmissionColor
+1
+1
+1
+1
+texture
+_MainTex
+materials/standard materials pack/wood/woodalbedo.png
+texture
+_BumpMap
+materials/standard materials pack/wood/woodnormal.png
+texture
+_OcclusionMap
+materials/standard materials pack/wood/woodao.png
+texture
+_EmissionMap
+materials/standard materials pack/wood/woodgrayscale.png

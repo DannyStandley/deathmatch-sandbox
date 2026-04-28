@@ -1,0 +1,18 @@
+mapname maps/Bodie V/geoplant/entrance.lua
+maplocation Bodie V
+mapx -5
+mapy 51
+mapz 0
+maploadx -50
+maploady -50
+maploadz 0
+maploadmaxx 50
+maploadmaxy 50
+maploadmaxz 6
+mapstate sound maps/Bodie V/sounds/room2.ogg
+mapstate env stone_corridor
+mapstate steptype maps/Bodie V/sounds/rock1
+mapstate dontsave
+mapstate object Bodie V
+mapstate loadmap
+mapstate maps/Bodie V/geoplant/rivver1.map

@@ -1,0 +1,18 @@
+mapname maps/cargo hauler/navigation suite.lua
+maplocation follow
+mapx 3
+mapy 27
+mapz 0
+maploadx -20
+maploady -20
+maploadz -20
+maploadmaxx 20
+maploadmaxy 20
+maploadmaxz 20
+mapstate runscript scripts/modules/omni navigator suite/navigator instrument.lua
+mapstate dontsave
+mapstate orgtheta 0
+mapstate spawnx -0.3
+mapstate spawny 0
+mapstate spawnz 0.4
+mapstate object cargo hauler

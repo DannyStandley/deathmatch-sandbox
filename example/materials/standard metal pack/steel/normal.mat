@@ -1,0 +1,28 @@
+Standard
+property
+_Metallic
+0.2
+property
+_Smoothness
+0.75
+property
+_Occlusion
+1.0
+color
+_EmissionColor
+1
+1
+1
+1
+texture
+_MainTex
+materials/standard metal pack/steel/steelalbedo.png
+texture
+_BumpMap
+materials/standard metal pack/steel/steelnormal.png
+texture
+_EmissionMap
+materials/standard metal pack/steel/steelgrayscale.png
+texture
+_OcclusionMap
+materials/standard metal pack/steel/steelao.png

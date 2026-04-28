@@ -1,0 +1,22 @@
+ColonialMarines
+property
+_E3Power
+5
+property
+_FogIntensity
+0.3
+property
+_MistDensity
+0.1
+property
+_Glossiness
+0.7
+property
+_MetallicEdge
+1.0
+texture
+_MainTex
+materials/standard metal pack/metal3/metalalbedo.png
+texture
+_GrimeMap
+materials/standard metal pack/metal3/metalgrayscale.png

@@ -1,0 +1,22 @@
+Standard
+tile
+10
+10
+color
+_EmissionColor
+0.800
+0.467
+0.133
+1
+texture
+_MainTex
+materials/standard planet pack/rock/rockalbedo.png
+texture
+_BumpMap
+materials/standard planet pack/rock/rocknormal.png
+texture
+_OcclusionMap
+materials/standard planet pack/rock/rockao.png
+texture
+_EmissionMap
+materials/standard planet pack/rock/rockgrayscale.png

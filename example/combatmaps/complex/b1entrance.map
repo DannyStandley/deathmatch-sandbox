@@ -1,0 +1,20 @@
+map
+mapname combatmaps/complex/b1entrance.lua
+maplocation combat test complex
+mapx 0
+mapy 10
+mapz 0
+maploadx -100
+maploady -100
+maploadz -100
+maploadmaxx 100
+maploadmaxy 100
+maploadmaxz 100
+mapstate runscript scripts/modules/location.lua
+mapstate dontsave
+mapstate nofile
+mapstate lengthx 10
+mapstate lengthy 0
+mapstate lengthz 6
+mapstate orgmap combatmaps/complex/hangar.map
+endmap

@@ -1,0 +1,19 @@
+Standard
+color
+_EmissionColor
+0.7
+0.5
+0.15
+1.0
+texture
+_MainTex
+materials/standard planet pack/cliff/cliffalbedo.png
+texture
+_BumpMap
+materials/standard planet pack/cliff/cliffnormal.png
+texture
+_OcclusionMap
+materials/standard planet pack/cliff/cliffao.png
+texture
+_EmissionMap
+materials/standard planet pack/cliff/cliffgrayscale.png

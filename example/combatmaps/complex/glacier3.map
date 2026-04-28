@@ -1,0 +1,23 @@
+map
+mapname combatmaps/complex/glacier3.lua
+maplocation combat test complex
+mapx 11
+mapy 10
+mapz 0
+maploadx -100
+maploady -100
+maploadz -100
+maploadmaxx 100
+maploadmaxy 50
+maploadmaxz 100
+mapstate runscript scripts/modules/rooms/glacier/glacier.lua
+mapstate startx 0
+mapstate starty 0
+mapstate startz 0
+mapstate endx 10
+mapstate endy 0
+mapstate endz 10
+mapstate orgtheta 180
+mapstate dontsave
+mapstate nofile
+endmap

@@ -1,0 +1,25 @@
+mapname maps/cargo hauler/cargo bay.lua
+maplocation follow
+mapx 0
+mapy 7
+mapz 0
+maploadx -50
+maploady -6
+maploadz -50
+maploadmaxx 50
+maploadmaxy 20
+maploadmaxz 50
+mapstate dontsave
+mapstate sound maps/cargo hauler/sounds/room1.ogg
+mapstate env arena
+mapstate steptype maps/cargo hauler/sounds/metal1
+mapstate object cargo hauler
+mapstate canseeweather
+mapstate loadmap
+mapstate maps/cargo hauler/window1.map
+mapstate loadmap
+mapstate maps/cargo hauler/window2.map
+mapstate loadmap
+mapstate maps/cargo hauler/door4.map
+mapstate loadmap
+mapstate maps/cargo hauler/engine room.map

@@ -1,0 +1,6 @@
+foundmap = manager:findmap(mapname)
+orgtheta = luafunctions:tofloatstr(mapfunctions:checkstatetext(foundmap, "orgtheta"))
+rampmat = manager:loadmaterial("materials/standard metal pack/ramp/"..manager:getsetting("graphicstype")..".mat")
+cube = mapfunctions:createcube()
+mapfunctions:spawnobject(0, 0, 0, 45, orgtheta, 0, cube, 1, mapname, rampmat)
+mapfunctions:destroyobj(cube)

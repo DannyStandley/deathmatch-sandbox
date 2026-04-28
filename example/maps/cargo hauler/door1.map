@@ -1,0 +1,19 @@
+mapname maps/cargo hauler/door1.lua
+maplocation follow
+mapx 0
+mapy -1
+mapz 0
+maploadx -50
+maploady -50
+maploadz -50
+maploadmaxx 50
+maploadmaxy 30
+maploadmaxz 50
+mapstate runscript scripts/modules/door/door.lua
+mapstate orgtheta 180
+mapstate destroyx 0
+mapstate destroyy -1
+mapstate destroyz 0
+mapstate orgmap maps/cargo hauler/airlock.lua
+mapstate object cargo hauler
+mapstate dontsave

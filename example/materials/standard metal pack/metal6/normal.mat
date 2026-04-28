@@ -1,0 +1,31 @@
+Standard
+tile
+5
+5
+property
+_Metallic
+0.7
+property
+_Smoothness
+0.3
+property
+_Occlusion
+1.0
+color
+_EmissionColor
+0.8
+0.8
+0.8
+1
+texture
+_MainTex
+materials/standard metal pack/metal6/metalalbedo.png
+texture
+_BumpMap
+materials/standard metal pack/metal6/metalnormal.png
+texture
+_EmissionMap
+materials/standard metal pack/metal6/metalgrayscale.png
+texture
+_OcclusionMap
+materials/standard metal pack/metal6/metalao.png

@@ -1,0 +1,13 @@
+Xbox360
+property
+_E3Power
+20
+texture
+_MainTex
+scripts/modules/union arospace fusion core/fusionalbedo.png
+texture
+_OcclusionMap
+scripts/modules/union arospace fusion core/fusionao.png
+texture
+_GrimeMap
+scripts/modules/union arospace fusion core/fusiongrayscale.png

@@ -1,0 +1,19 @@
+mapname maps/curg/b1w1.lua
+maplocation curg
+mapx 14
+mapy -15
+mapz 1
+maploadx -100
+maploady -100
+maploadz -100
+maploadmaxx 100
+maploadmaxy 100
+maploadmaxz 100
+mapstate dontsave
+mapstate object curg
+mapstate runscript scripts/modules/sidewindow.lua
+mapstate destroyx -1
+mapstate destroyy 5
+mapstate destroyz 1
+mapstate orgmap maps/curg/building1.lua
+mapstate orgtheta 270

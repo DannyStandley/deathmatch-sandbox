@@ -1,0 +1,26 @@
+mapname maps/phoenix red warp/dockinglight.lua
+maplocation follow
+mapx 10
+mapy 10
+mapz 10
+maploadx -100
+maploady -100
+maploadz -100
+maploadmaxx 100
+maploadmaxy 100
+maploadmaxz 50
+mapstate runscript scripts/modules/rooms/internal light/spawn.lua
+mapstate dontsave
+mapstate spawnx 10
+mapstate spawny 10
+mapstate spawnz 10
+mapstate objname plane
+mapstate r 0.7
+mapstate g 0.5
+mapstate b 0
+mapstate a 1
+mapstate object phoenix red warp
+mapstate orgmap maps/phoenix red warp/docking1.lua
+mapstate powermap maps/phoenix red warp/docking1.lua
+mapstate intensity 50
+mapstate range 15

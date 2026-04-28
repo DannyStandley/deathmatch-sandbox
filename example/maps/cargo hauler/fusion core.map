@@ -1,0 +1,15 @@
+mapname maps/cargo hauler/fusion core.lua
+maplocation follow
+mapx 11
+mapy 11
+mapz 0
+maploadx -10
+maploady -10
+maploadz -50
+maploadmaxx 10
+maploadmaxy 10
+maploadmaxz 10
+mapstate dontsave
+mapstate runscript scripts/modules/union arospace fusion core/core.lua
+mapstate orgtheta 90
+mapstate object cargo hauler

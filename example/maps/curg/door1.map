@@ -1,0 +1,21 @@
+mapname maps/curg/door1.lua
+maplocation curg
+mapx 14
+mapy -15
+mapz 0
+maploadx -100
+maploady -100
+maploadz 0
+maploadmaxx 10
+maploadmaxy 100
+maploadmaxz 100
+mapstate runscript scripts/modules/door/door.lua
+mapstate side
+mapstate object curg
+mapstate orgmap maps/curg/building1.map
+mapstate destroyx -1
+mapstate destroyy 5
+mapstate destroyz 0
+mapstate dontsave
+mapstate orgtheta 90
+mapstate mat materials/standard metal pack/airlockdoor

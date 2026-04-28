@@ -1,0 +1,28 @@
+Standard
+color
+_EmissionColor
+1
+1
+1
+1
+property
+_Metallic
+0.7
+property
+_Smoothness
+0.4
+property
+_Occlusion
+1.0
+texture
+_MainTex
+scripts/modules/union arospace fusion core/fusionalbedo.png
+texture
+_BumpMap
+scripts/modules/union arospace fusion core/fusionnormal.png
+texture
+_EmissionMap
+scripts/modules/union arospace fusion core/fusiongrayscale.png
+texture
+_OcclusionMap
+scripts/modules/union arospace fusion core/fusionao.png

@@ -1,0 +1,10 @@
+Xbox360
+texture
+_OcclusionMap
+scripts/modules/door/doorao.png
+texture
+_MainTex
+scripts/modules/door/dooralbedo.png
+texture
+_GrimeMap
+scripts/modules/door/doorgrayscale.png

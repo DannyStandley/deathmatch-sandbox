@@ -1,0 +1,5 @@
+snowmat = manager:loadmaterial("materials/standard planet pack/snow/"..manager:getsetting("graphicstype")..".mat")
+plane = mapfunctions:createplane()
+mapfunctions:spawnobjects(0, 0, 0, 20, 20, 0, 0, 0, 0, plane, 0, mapname, snowmat)
+mapfunctions:destroyobj(plane)
+mapfunctions:spawnlocation(0, 0, 0, 20, 0, 10, mapname, mapname)

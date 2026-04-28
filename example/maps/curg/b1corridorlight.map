@@ -1,0 +1,26 @@
+mapname maps/curg/b1corridorlight.lua
+maplocation curg
+mapx 36
+mapy -15
+mapz 1
+maploadx -20
+maploady 0
+maploadz -100
+maploadmaxx 20
+maploadmaxy 0
+maploadmaxz 100
+mapstate runscript scripts/modules/rooms/internal light/spawn.lua
+mapstate dontsave
+mapstate spawnx 10
+mapstate spawny 0
+mapstate spawnz 1
+mapstate objname plane
+mapstate r 0.2
+mapstate g 0.4
+mapstate b 1.0
+mapstate a 1.0
+mapstate intensity 15
+mapstate range 10
+mapstate object curg
+mapstate orgmap maps/curg/b1corridor.lua
+mapstate powermap maps/curg/building1.lua

@@ -1,0 +1,24 @@
+mapname maps/union station/hub.lua
+maplocation union station
+mapx 0
+mapy 21
+mapz 0
+maploadx -100
+maploady -20
+maploadz -100
+maploadmaxx 100
+maploadmaxy 150
+maploadmaxz 100
+mapstate loadmap
+mapstate maps/union station/door4.map
+mapstate loadmap
+mapstate maps/union station/door5.map
+mapstate loadmap
+mapstate maps/union station/airlock2.map
+mapstate loadmap
+mapstate maps/union station/window2.map
+mapstate dontsave
+mapstate object union station
+mapstate steptype maps/union station/sounds/metal1
+mapstate sound maps/union station/sounds/room1.ogg
+mapstate env dizzy

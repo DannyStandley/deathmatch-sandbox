@@ -1,0 +1,16 @@
+ColonialMarines
+property
+_E3Power
+20
+color
+_FogColor
+1
+1
+1
+1
+texture
+_MainTex
+scripts/modules/union arospace fusion core/fusionalbedo.png
+texture
+_GrimeMap
+scripts/modules/union arospace fusion core/fusiongrayscale.png

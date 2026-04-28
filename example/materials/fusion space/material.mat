@@ -1,0 +1,36 @@
+Skybox/Weather
+vector3
+_WindSpeed
+0
+0
+0
+property
+_WindIntensity
+1.5
+color
+_Tint
+1
+1
+1
+1
+texture
+_WindTex
+materials/fusion space/fusion.png
+texture
+_FrontTex
+materials/fusion space/spacemat.png
+texture
+_BackTex
+materials/fusion space/spacemat.png
+texture
+_LeftTex
+materials/fusion space/spacemat.png
+texture
+_RightTex
+materials/fusion space/spacemat.png
+texture
+_UpTex
+materials/fusion space/spacemat.png
+texture
+_DownTex
+materials/fusion space/spacemat.png

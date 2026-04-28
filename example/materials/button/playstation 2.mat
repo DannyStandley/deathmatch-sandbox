@@ -1,0 +1,10 @@
+PS2
+texture
+_MainTex
+materials/button/buttonalbedo.png
+texture
+_BumpMap
+materials/button/buttonnormal.png
+texture
+_OcclusionMap
+materials/button/buttonao.png

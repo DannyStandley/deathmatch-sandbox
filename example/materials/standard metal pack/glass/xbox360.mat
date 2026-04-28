@@ -1,0 +1,13 @@
+Xbox360
+property
+_E3Power
+5
+texture
+_MainTex
+materials/standard metal pack/glass/glassalbedo.png
+texture
+_GrimeMap
+materials/standard metal pack/glass/glassgrayscale.png
+texture
+_OcclusionMap
+materials/standard metal pack/glass/glassao.png

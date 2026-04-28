@@ -1,0 +1,7 @@
+cube = mapfunctions:createobject()
+obj = mapfunctions:spawnobject(0, 0, 0, 0, 0, 0, cube, 1, mapname)
+mapfunctions:destroyobj(cube)
+mapfunctions:attachlight(obj, "point")
+mapfunctions:setlightrange(obj, 22)
+mapfunctions:setlightcolor(obj, 1, 1, 1, 1)
+mapfunctions:setlightintensity(obj, 50)

@@ -1,0 +1,19 @@
+mapname maps/phoenix red warp/door1.lua
+maplocation follow
+mapx 10
+mapy 20
+mapz 0
+maploadx -100
+maploady -30
+maploadz -100
+maploadmaxx 100
+maploadmaxy 60
+maploadmaxz 100
+mapstate runscript scripts/modules/door/door.lua
+mapstate orgmap maps/phoenix red warp/docking1.lua
+mapstate destroyx 10
+mapstate destroyy 20
+mapstate destroyz 0
+mapstate object phoenix red warp
+mapstate dontsave
+mapstate orgtheta 0

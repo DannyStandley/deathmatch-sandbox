@@ -1,0 +1,13 @@
+PS2
+property
+_OcclusionStrength
+0.5
+texture
+_MainTex
+materials/standard metal pack/metal5/metalalbedo.png
+texture
+_BumpMap
+materials/standard metal pack/metal5/metalnormal.png
+texture
+_OcclusionMap
+materials/standard metal pack/metal5/metalao.png

@@ -1,0 +1,29 @@
+mapname maps/cargo hauler/bridge.lua
+maplocation follow
+mapx 0
+mapy 18
+mapz 0
+maploadx -100
+maploady -20
+maploadz -100
+maploadmaxx 100
+maploadmaxy 100
+maploadmaxz 100
+mapstate dontsave
+mapstate object cargo hauler
+mapstate loadmap
+mapstate maps/cargo hauler/door3.map
+mapstate sound maps/cargo hauler/sounds/room2.ogg
+mapstate env arena
+mapstate steptype maps/cargo hauler/sounds/metal1
+mapstate canseeweather
+mapstate loadmap
+mapstate maps/cargo hauler/navigation suite.map
+mapstate loadmap
+mapstate maps/cargo hauler/flight controls.map
+mapstate loadmap
+mapstate maps/cargo hauler/window3.map
+mapstate loadmap
+mapstate maps/cargo hauler/window4.map
+mapstate loadmap
+mapstate maps/cargo hauler/systems suite.map

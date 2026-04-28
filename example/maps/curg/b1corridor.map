@@ -1,0 +1,27 @@
+mapname maps/curg/b1corridor.lua
+maplocation curg
+mapx 26
+mapy -15
+mapz 0
+maploadx -10
+maploady -100
+maploadz -100
+maploadmaxx 50
+maploadmaxy 100
+maploadmaxz 100
+mapstate dontsave
+mapstate object curg
+mapstate runscript scripts/modules/rooms/custom.lua
+mapstate maxx 20
+mapstate maxy 1
+mapstate maxz 1
+mapstate floor materials/standard metal pack/metal3
+mapstate ceeling materials/standard metal pack/metal
+mapstate wall materials/standard metal pack/glass
+mapstate env hallway
+mapstate steptype maps/curg/sounds/normal1
+mapstate sound maps/curg/sounds/room2.ogg
+mapstate loadmap
+mapstate maps/curg/b1corridorentrance.map
+mapstate loadmap
+mapstate maps/curg/b1corridorlight.map

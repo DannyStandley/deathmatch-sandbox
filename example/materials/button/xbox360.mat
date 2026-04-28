@@ -1,0 +1,13 @@
+Xbox360
+property
+_E3Power
+20
+texture
+_MainTex
+materials/button/buttonalbedo.png
+texture
+_GrimeMap
+materials/button/buttongrayscale.png
+texture
+_OcclusionMap
+materials/button/buttonao.png
