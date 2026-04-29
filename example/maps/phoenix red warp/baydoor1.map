@@ -2,7 +2,7 @@ mapname maps/phoenix red warp/baydoor1.lua
 maplocation follow
 mapx -1
 mapy -1
-mapz 0
+mapz 10
 maploadx -100
 maploady -100
 maploadz -100
