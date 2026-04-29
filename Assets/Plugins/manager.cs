@@ -564,7 +564,10 @@ GameObject.Destroy(a);
 
 public void attachlight(GameObject obj, string type)
 {
+if(obj.GetComponent<Light>()==null)
+{
 obj.AddComponent<Light>();
+}
 obj.GetComponent<Light>().renderMode = LightRenderMode.ForcePixel;
 obj.GetComponent<Light>().shadowBias = 0f;
 obj.GetComponent<Light>().shadowNormalBias = 0f;
