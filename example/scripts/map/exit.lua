@@ -1,3 +1,7 @@
+curship = manager:findshipbymap(mapname)
+if curship~=null and curship~=manager:getshipscript(manager.foundship) and curship~=manager:findshipbymap(curship.location) then
+return
+end
 oldfoundmap = manager:findmap(mapname)
 foundship = null
 findmapname = manager:getshipscript(manager.foundship).location
