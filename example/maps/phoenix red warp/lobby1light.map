@@ -1,7 +1,7 @@
 mapname maps/phoenix red warp/lobby1light.lua
 maplocation follow
 mapx 10
-mapy 40
+mapy 31
 mapz 10
 maploadx -100
 maploady -40
@@ -11,14 +11,14 @@ maploadmaxy 30
 maploadmaxz 100
 mapstate runscript scripts/modules/rooms/internal light/spawn.lua
 mapstate spawnx 10
-mapstate spawny 19
+mapstate spawny 10
 mapstate spawnz 10
 mapstate r 0.3
 mapstate g 0.7
 mapstate b 0.5
 mapstate a 1
 mapstate intensity 50
-mapstate range 50
+mapstate range 25
 mapstate dontsave
 mapstate object phoenix red warp
 mapstate orgmap maps/phoenix red warp/lobby1.lua
