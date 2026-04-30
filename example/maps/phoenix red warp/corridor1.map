@@ -15,7 +15,7 @@ mapstate steptype sounds/metal1
 mapstate dontsave
 mapstate object phoenix red warp
 mapstate runscript scripts/modules/rooms/custom.lua
-mapstate floor materials/standard metal pack/metal
+mapstate floor materials/standard metal pack/metal3
 mapstate ceeling materials/standard metal pack/metal3
 mapstate wall materials/standard metal pack/steel
 mapstate maxx 10
@@ -23,3 +23,9 @@ mapstate maxy 10
 mapstate maxz 3
 mapstate loadmap
 mapstate maps/phoenix red warp/corridor1c1.map
+mapstate loadmap
+mapstate maps/phoenix red warp/corridor1l1.map
+mapstate loadmap
+mapstate maps/phoenix red warp/corridor1light.map
+mapstate loadmap
+mapstate maps/phoenix red warp/corridor1clear.map

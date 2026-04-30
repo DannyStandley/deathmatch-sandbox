@@ -29,3 +29,5 @@ mapstate loadmap
 mapstate maps/phoenix red warp/lobby1light.map
 mapstate loadmap
 mapstate maps/phoenix red warp/door2.map
+mapstate loadmap
+mapstate maps/phoenix red warp/lobby1l2.map

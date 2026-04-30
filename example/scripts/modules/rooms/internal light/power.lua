@@ -8,7 +8,8 @@ spawnz = luafunctions:tofloatstr(mapfunctions:checkstatetext(foundmap, "spawnz")
 obj = mapfunctions:getobj(spawnx, spawny, spawnz, objname, orgmap)
 function update() do
 foundmap = manager:findmap(mapname)
-if player:checkstate("switchplayer")==1 or foundmap==null or foundmap.loaded==0 then
+orgmap = manager:findmap(mapfunctions:checkstatetext(foundmap, "orgmap"))
+if player:checkstate("switchplayer")==1 or foundmap==null or foundmap.loaded==0 or orgmap==null or orgmap.loaded==0 then
 manager:removefunction(updatefunction)
 return
 end
