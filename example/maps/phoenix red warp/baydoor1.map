@@ -17,4 +17,7 @@ mapstate lengthy -1
 mapstate lengthz 10
 mapstate material materials/standard metal pack/airlockdoor
 mapstate orient 0
+mapstate scalex 1
+mapstate scaley 1
+mapstate scalez 1
 mapstate runscript scripts/modules/machine.lua

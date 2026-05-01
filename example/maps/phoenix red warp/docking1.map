@@ -21,6 +21,7 @@ mapstate maxz 10
 mapstate env arena
 mapstate sound sounds/room16.ogg
 mapstate steptype sounds/metal2
+mapstate nosouthwall
 mapstate loadmap
 mapstate maps/phoenix red warp/dockinglight.map
 mapstate loadmap
@@ -30,6 +31,10 @@ mapstate maps/phoenix red warp/lobby1.map
 mapstate loadmap
 mapstate maps/phoenix red warp/docking1l1.map
 mapstate loadmap
-mapstate maps/phoenix red warp/docking1clear.map
-mapstate loadmap
 mapstate maps/phoenix red warp/docking1entrance.map
+mapstate loadmap
+mapstate maps/phoenix red warp/door3.map
+mapstate loadmap
+mapstate maps/phoenix red warp/docking1exit2.map
+mapstate loadmap
+mapstate maps/phoenix red warp/docking1entrance2.map
