@@ -1,4 +1,8 @@
 foundmap = manager:findmap(mapname)
+noexitnorth = mapfunctions:checkstate(foundmap, "noexitnorth")
+noexitsouth = mapfunctions:checkstate(foundmap, "noexitsouth")
+noexiteast = mapfunctions:checkstate(foundmap, "noexiteast")
+noexitwest = mapfunctions:checkstate(foundmap, "noexitwest")
 nosouthwall = mapfunctions:checkstate(foundmap, "nosouthwall")
 nonorthwall = mapfunctions:checkstate(foundmap, "nonorthwall")
 nowestwall = mapfunctions:checkstate(foundmap, "nowestwall")
@@ -38,3 +42,15 @@ mapfunctions:spawnobjects(-1, -1, 0, maxx, -1, maxz, 0, 180, 0, cube, 1, mapname
 end
 mapfunctions:destroyobj(plane)
 mapfunctions:destroyobj(cube)
+if noexitnorth==0 then
+mapfunctions:spawnlocation(0, maxy, 0, maxx, maxy, maxz, mapname, mapname)
+end
+if noexitsouth==0 then
+mapfunctions:spawnlocation(0, 0, 0, maxx, 0, maxz, mapname, mapname)
+end
+if noexiteast==0 then
+mapfunctions:spawnlocation(maxx, 0, 0, maxx, maxy, maxz, mapname, mapname)
+end
+if noexitwest==0 then
+mapfunctions:spawnlocation(0, 0, 0, 0, maxy, maxz, mapname, mapname)
+end

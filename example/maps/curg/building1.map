@@ -13,12 +13,9 @@ mapstate dontsave
 mapstate sound maps/curg/sounds/room2.ogg
 mapstate env room
 mapstate steptype maps/curg/sounds/normal1
-mapstate runscript scripts/modules/rooms/ship1.lua
 mapstate object curg
 mapstate loadmap
 mapstate maps/curg/door1.map
-mapstate loadmap
-mapstate maps/curg/building1entrance.map
 mapstate loadmap
 mapstate maps/curg/building1exit.map
 mapstate loadmap
@@ -29,8 +26,13 @@ mapstate loadmap
 mapstate maps/curg/door2.map
 mapstate loadmap
 mapstate maps/curg/b1corridor.map
-mapstate loadmap
-mapstate maps/curg/b1corridorclear.map
-mapstate loadmap
-mapstate maps/curg/b1corridorexit.map
 mapstate canseeweather
+mapstate runscript scripts/modules/rooms/custom.lua
+mapstate floor materials/standard metal pack/metal
+mapstate ceeling materials/standard metal pack/metal
+mapstate wall materials/standard metal pack/metal2
+mapstate maxx 10
+mapstate maxy 10
+mapstate maxz 6
+mapstate loadmap
+mapstate maps/curg/building1light.map

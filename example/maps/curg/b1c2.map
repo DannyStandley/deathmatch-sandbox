@@ -1,6 +1,6 @@
 mapname maps/curg/b1c2.lua
 maplocation curg
-mapx 26
+mapx 27
 mapy -15
 mapz 0
 maploadx -10
@@ -10,7 +10,7 @@ maploadmaxx 20
 maploadmaxy 15
 maploadmaxz 15
 mapstate object curg
-mapstate startx 26
+mapstate startx 27
 mapstate starty 35
 mapstate startz 0
 mapstate endx 47

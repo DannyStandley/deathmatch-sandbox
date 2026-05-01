@@ -1,6 +1,6 @@
 mapname maps/curg/b1corridor.lua
 maplocation curg
-mapx 26
+mapx 27
 mapy -15
 mapz 0
 maploadx -10
@@ -22,6 +22,5 @@ mapstate env hallway
 mapstate steptype maps/curg/sounds/normal1
 mapstate sound maps/curg/sounds/room2.ogg
 mapstate loadmap
-mapstate maps/curg/b1corridorentrance.map
-mapstate loadmap
 mapstate maps/curg/b1corridorlight.map
+mapstate nowestwall

@@ -1,6 +1,6 @@
 mapname maps/curg/door2.lua
 maplocation curg
-mapx 25
+mapx 26
 mapy -15
 mapz 0
 maploadx -20

@@ -22,10 +22,6 @@ mapstate maxx 10
 mapstate maxy 10
 mapstate maxz 3
 mapstate loadmap
-mapstate maps/phoenix red warp/corridor1l1.map
-mapstate loadmap
 mapstate maps/phoenix red warp/corridor1light.map
-mapstate loadmap
-mapstate maps/phoenix red warp/corridor1l2.map
 mapstate nosouthwall
 mapstate nonorthwall
