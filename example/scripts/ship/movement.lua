@@ -149,6 +149,7 @@ if foundship.location~="" then
 if shipx<minboundx or shipx>maxboundx or shipy<minboundy or shipy>maxboundy or shipz<minboundz or shipz>maxboundz then
 oldship = manager:findshipbymap(foundship.location)
 destarea = foundship.shipname
+locatemap = manager:findmap(foundship.location)
 if mapfunctions:checkstatetext(locatemap, "bound"..foundship.dir)~="" then
 foundship.location = mapfunctions:checkstatetext(locatemap, "bound"..foundship.dir)
 destarea = manager:findmap(foundship.location).location
@@ -186,15 +187,6 @@ end
 if foundship.dir=="up" then
 shipz = minboundz
 end
-else
-manager:changeskybox(manager:loadmaterial("materials/fusion space/material.mat"))
-foundship.location = ""
-foundship.galx = oldship.galx
-foundship.galy = oldship.galy
-foundship.galz = oldship.galz
-shipx = oldship.shipx
-shipy = oldship.shipy
-shipz = oldship.shipz
 end
 for d=0, foundship.maps.Count -1 do
 foundship.maps[d].location = destarea
