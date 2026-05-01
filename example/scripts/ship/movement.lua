@@ -5,34 +5,6 @@ minboundz = -1000.99
 maxboundx = 1000.99
 maxboundy = 1000.99
 maxboundz = 1000.99
-function setbounds() do
-minboundx = -1000.99
-minboundy = -1000.99
-minboundz = -1000.99
-maxboundx = 1000.99
-maxboundy = 1000.99
-maxboundz = 1000.99
-locatemap = manager:findmap(foundship.location)
-if mapfunctions:checkstatetext(locatemap, "minboundx")~="" then
-minboundx = luafunctions:tofloatstr(mapfunctions:checkstatetext(locatemap, "minboundx"))
-end
-if mapfunctions:checkstatetext(locatemap, "minboundy")~="" then
-minboundy = luafunctions:tofloatstr(mapfunctions:checkstatetext(locatemap, "minboundy"))
-end
-if mapfunctions:checkstatetext(locatemap, "minboundz")~="" then
-minboundz = luafunctions:tofloatstr(mapfunctions:checkstatetext(locatemap, "minboundz"))
-end
-if mapfunctions:checkstatetext(locatemap, "maxboundx")~="" then
-maxboundx = luafunctions:tofloatstr(mapfunctions:checkstatetext(locatemap, "maxboundx"))
-end
-if mapfunctions:checkstatetext(locatemap, "maxboundy")~="" then
-maxboundy = luafunctions:tofloatstr(mapfunctions:checkstatetext(locatemap, "maxboundy"))
-end
-if mapfunctions:checkstatetext(locatemap, "maxboundz")~="" then
-maxboundz = luafunctions:tofloatstr(mapfunctions:checkstatetext(locatemap, "maxboundz"))
-end
-end
-end
 if foundship:checkstate("autopilot")==1 then
 manager:addfunction("scripts/ship/autopilot.lua", "update", mapname)
 end
@@ -58,10 +30,6 @@ foundship.desiredspeed = 0
 end
 foundship:acceleration()
 foundship:powerloop()
-if foundship:checkstatetext("moveform")=="" then
-foundship:addstate("moveform 0.0001")
-end
-moveform = luafunctions:tofloatstr(foundship:checkstatetext("moveform"))
 if foundship.location=="" then
 shipx = foundship.galx
 shipy = foundship.galy
@@ -72,120 +40,118 @@ shipy = foundship.shipy
 shipz = foundship.shipz
 end
 if foundship.dir=="north and up" then
-shipy = shipy +moveform *foundship.speed
-shipz = shipz +moveform *foundship.speed
+shipy = shipy +0.0001 *foundship.speed
+shipz = shipz +0.0001 *foundship.speed
 end
 if foundship.dir=="south and up" then
-shipy = shipy -moveform *foundship.speed
-shipz = shipz +moveform *foundship.speed
+shipy = shipy -0.0001 *foundship.speed
+shipz = shipz +0.0001 *foundship.speed
 end
 if foundship.dir=="east and up" then
-shipx = shipx +moveform *foundship.speed
-shipz = shipz +moveform *foundship.speed
+shipx = shipx +0.0001 *foundship.speed
+shipz = shipz +0.0001 *foundship.speed
 end
 if foundship.dir=="west and up" then
-shipx = shipx -moveform *foundship.speed
-shipz = shipz +moveform *foundship.speed
+shipx = shipx -0.0001 *foundship.speed
+shipz = shipz +0.0001 *foundship.speed
 end
 if foundship.dir=="northeast and up" then
-shipx = shipx +moveform *foundship.speed
-shipy = shipy +moveform *foundship.speed
-shipz = shipz +moveform *foundship.speed
+shipx = shipx +0.0001 *foundship.speed
+shipy = shipy +0.0001 *foundship.speed
+shipz = shipz +0.0001 *foundship.speed
 end
 if foundship.dir=="northwest and up" then
-shipx = shipx -moveform *foundship.speed
-shipy = shipy +moveform *foundship.speed
-shipz = shipz +moveform *foundship.speed
+shipx = shipx -0.0001 *foundship.speed
+shipy = shipy +0.0001 *foundship.speed
+shipz = shipz +0.0001 *foundship.speed
 end
 if foundship.dir=="southeast and up" then
-shipx = shipx +moveform *foundship.speed
-shipy = shipy -moveform *foundship.speed
-shipz = shipz +moveform *foundship.speed
+shipx = shipx +0.0001 *foundship.speed
+shipy = shipy -0.0001 *foundship.speed
+shipz = shipz +0.0001 *foundship.speed
 end
 if foundship.dir=="southwest and up" then
-shipx = shipx -moveform *foundship.speed
-shipy = shipy -moveform *foundship.speed
-shipz = shipz +moveform *foundship.speed
+shipx = shipx -0.0001 *foundship.speed
+shipy = shipy -0.0001 *foundship.speed
+shipz = shipz +0.0001 *foundship.speed
 end
 if foundship.dir=="north and down" then
-shipy = shipy +moveform *foundship.speed
-shipz = shipz -moveform *foundship.speed
+shipy = shipy +0.0001 *foundship.speed
+shipz = shipz -0.0001 *foundship.speed
 end
 if foundship.dir=="south and down" then
-shipy = shipy -moveform *foundship.speed
-shipz = shipz -moveform *foundship.speed
+shipy = shipy -0.0001 *foundship.speed
+shipz = shipz -0.0001 *foundship.speed
 end
 if foundship.dir=="east and down" then
-shipx = shipx +moveform *foundship.speed
-shipz = shipz -moveform *foundship.speed
+shipx = shipx +0.0001 *foundship.speed
+shipz = shipz -0.0001 *foundship.speed
 end
 if foundship.dir=="west and down" then
-shipx = shipx -moveform *foundship.speed
-shipz = shipz -moveform *foundship.speed
+shipx = shipx -0.0001 *foundship.speed
+shipz = shipz -0.0001 *foundship.speed
 end
 if foundship.dir=="northeast and down" then
-shipx = shipx +moveform *foundship.speed
-shipy = shipy +moveform *foundship.speed
-shipz = shipz -moveform *foundship.speed
+shipx = shipx +0.0001 *foundship.speed
+shipy = shipy +0.0001 *foundship.speed
+shipz = shipz -0.0001 *foundship.speed
 end
 if foundship.dir=="northwest and down" then
-shipx = shipx -moveform *foundship.speed
-shipy = shipy +moveform *foundship.speed
-shipz = shipz -moveform *foundship.speed
+shipx = shipx -0.0001 *foundship.speed
+shipy = shipy +0.0001 *foundship.speed
+shipz = shipz -0.0001 *foundship.speed
 end
 if foundship.dir=="southeast and down" then
-shipx = shipx +moveform *foundship.speed
-shipy = shipy -moveform *foundship.speed
-shipz = shipz -moveform *foundship.speed
+shipx = shipx +0.0001 *foundship.speed
+shipy = shipy -0.0001 *foundship.speed
+shipz = shipz -0.0001 *foundship.speed
 end
 if foundship.dir=="southwest and down" then
-shipx = shipx -moveform *foundship.speed
-shipy = shipy -moveform *foundship.speed
-shipz = shipz -moveform *foundship.speed
+shipx = shipx -0.0001 *foundship.speed
+shipy = shipy -0.0001 *foundship.speed
+shipz = shipz -0.0001 *foundship.speed
 end
 if foundship.dir=="northeast" then
-shipx = shipx +moveform *foundship.speed
-shipy = shipy +moveform *foundship.speed
+shipx = shipx +0.0001 *foundship.speed
+shipy = shipy +0.0001 *foundship.speed
 end
 if foundship.dir=="northwest" then
-shipx = shipx -moveform *foundship.speed
-shipy = shipy +moveform *foundship.speed
+shipx = shipx -0.0001 *foundship.speed
+shipy = shipy +0.0001 *foundship.speed
 end
 if foundship.dir=="southeast" then
-shipx = shipx +moveform *foundship.speed
-shipy = shipy -moveform *foundship.speed
+shipx = shipx +0.0001 *foundship.speed
+shipy = shipy -0.0001 *foundship.speed
 end
 if foundship.dir=="southwest" then
-shipx = shipx -moveform *foundship.speed
-shipy = shipy -moveform *foundship.speed
+shipx = shipx -0.0001 *foundship.speed
+shipy = shipy -0.0001 *foundship.speed
 end
 if foundship.dir=="up" then
-shipz = shipz +moveform *foundship.speed
+shipz = shipz +0.0001 *foundship.speed
 end
 if foundship.dir=="down" then
-shipz = shipz -moveform *foundship.speed
+shipz = shipz -0.0001 *foundship.speed
 end
 if foundship.dir=="north" then
-shipy = shipy +moveform *foundship.speed
+shipy = shipy +0.0001 *foundship.speed
 end
 if foundship.dir=="south" then
-shipy = shipy -moveform *foundship.speed
+shipy = shipy -0.0001 *foundship.speed
 end
 if foundship.dir=="east" then
-shipx = shipx +moveform *foundship.speed
+shipx = shipx +0.0001 *foundship.speed
 end
 if foundship.dir=="west" then
-shipx = shipx -moveform *foundship.speed
+shipx = shipx -0.0001 *foundship.speed
 end
 if foundship.location~="" then
-setbounds()
 if shipx<minboundx or shipx>maxboundx or shipy<minboundy or shipy>maxboundy or shipz<minboundz or shipz>maxboundz then
 oldship = manager:findshipbymap(foundship.location)
 destarea = foundship.shipname
 if mapfunctions:checkstatetext(locatemap, "bound"..foundship.dir)~="" then
 foundship.location = mapfunctions:checkstatetext(locatemap, "bound"..foundship.dir)
 destarea = manager:findmap(foundship.location).location
-setbounds()
 if foundship.dir=="north" then
 shipy = minboundx
 end

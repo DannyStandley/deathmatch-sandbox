@@ -18,4 +18,3 @@ shippitch 1
 shipmap maps/Bodie V/orbit.lua
 shipmap maps/Bodie V/surface.lua
 shipstate type engage point
-shipstate moveform 0.0001

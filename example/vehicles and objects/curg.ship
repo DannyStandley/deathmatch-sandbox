@@ -18,4 +18,3 @@ shippitch 1
 shipmap maps/curg/orbit.lua
 shipmap maps/curg/surface.lua
 shipstate type engage point
-shipstate moveform 0.0001

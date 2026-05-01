@@ -17,4 +17,3 @@ shipdesiredpower NaN
 shippitch 1
 shipmap maps/union station/exterior.lua
 shipstate type engage point
-shipstate moveform 0.0001

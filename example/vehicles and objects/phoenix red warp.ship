@@ -16,4 +16,3 @@ shippower 0
 shipdesiredpower 0
 shippitch 1
 shipmap maps/phoenix red warp/exterior.lua
-shipstate moveform 0.0001

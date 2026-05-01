@@ -8,7 +8,7 @@ shipx 0.3460804
 shipy 3.116372
 shipz 0.06322871
 shiplocation maps/curg/orbit.lua
-shipmaxspeed 700
+shipmaxspeed 4000
 shipspeed 0
 shipdesiredspeed 0
 shipenginesound maps/cargo hauler/sounds/engine.ogg
@@ -16,5 +16,4 @@ shippower 0
 shipdesiredpower 0
 shippitch 1
 shipmap maps/cargo hauler/exterior.lua
-shipstate moveform 0.0001
 shipstate power 0

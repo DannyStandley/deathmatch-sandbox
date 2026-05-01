@@ -33,10 +33,6 @@ end
 end
 end
 setpowersetting()
-retroaction = manager:addinputaction()
-retroaction:AddBinding("<Keyboard>/R")
-retroaction:AddBinding("<Gamepad>/buttonEast")
-retroaction:Enable()
 fusjump = manager:addinputaction()
 fusjump:AddBinding("<Keyboard>/F")
 fusjump:AddBinding("<Gamepad>/buttonNorth")
@@ -102,27 +98,9 @@ moveaction:AddCompositeBinding("2DVector"):With("Up", "<Gamepad>/leftStick/Up"):
 moveaction:Enable()
 exitaction = manager:addinputaction()
 exitaction:AddBinding("<Keyboard>/Escape")
-exitaction:AddBinding("<Gamepad>/Start")
+exitaction:AddBinding("<Gamepad>/buttonEast")
 exitaction:Enable()
 function update() do
-if retroaction.triggered then
-if foundship:checkstate("moveform 0.0001")==1 then
-if manager:getsetting("tts")=="on" then
-luafunctions:say("Retro rockets on.")
-end
-foundship:removestate("moveform 0.0001")
-foundship:addstate("moveform 0.001")
-return
-end
-if foundship:checkstate("moveform 0.001")==1 then
-if manager:getsetting("tts")=="on" then
-luafunctions:say("Retro rockets off.")
-end
-foundship:removestate("moveform 0.001")
-foundship:addstate("moveform 0.0001")
-return
-end
-end
 if fusjump.triggered then
 if foundship.location~="" then
 manager:runscript("scripts/ship/fusion.lua", mapname)
