@@ -17,15 +17,16 @@ orgmap = maps[a]
 end
 end
 end
-for a=startx, endx do
-mapfunctions:destroyobj(mapfunctions:getobj(a, starty, startz, "plane", orgmap))
-mapfunctions:destroyobj(mapfunctions:getobj(a, starty, startz, "cube", orgmap))
-for m=starty, endy do
-mapfunctions:destroyobj(mapfunctions:getobj(a, m, startz, "plane", orgmap))
-mapfunctions:destroyobj(mapfunctions:getobj(a, m, startz, "cube", orgmap))
-for y=startz, endz do
-mapfunctions:destroyobj(mapfunctions:getobj(a, m, y, "plane", orgmap))
-mapfunctions:destroyobj(mapfunctions:getobj(a, m, y, "cube", orgmap))
+objects = manager:spawnlist()
+for a=0, orgmap.mapobjects.Count -1 do
+if orgmap.mapobjects[a].name=="cube" or orgmap.mapobjects[a].name=="plane" then
+misc = mapfunctions:getmisc(orgmap.mapobjects[a])
+if misc.orgx>=startx and misc.orgx<=endx and misc.orgy>=starty and misc.orgy<=endy and misc.orgz>=startz and misc.orgz<=endz then
+objects:Add(orgmap.mapobjects[a])
 end
 end
 end
+for a=0, objects.Count -1 do
+mapfunctions:destroyobj(objects[a])
+end
+objects:Clear()
