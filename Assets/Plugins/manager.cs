@@ -2990,8 +2990,16 @@ public List<string> spawnstringlist()
 {
 return new List<string>();
 }
-public Material addmaterial(string shader)
+public Material addmaterial(string specshader)
 {
+string shader = specshader;
+foreach(setting a in globals.settings)
+{
+if(a.name==specshader)
+{
+shader = a.value;
+}
+}
 Material newmat = new Material(Shader.Find(shader));
 newmat.EnableKeyword("_Emission");
 return newmat;
