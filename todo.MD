@@ -5,3 +5,4 @@ Ideally should be as adaptable and moddable as the rest of the project.
 * More scripts for more weapon types. Stuff like pulse rifles and the like.
 * making sure mac OS support and android actually work properly. I don't have any immediet plans to get a recent enough mac as they are rather expensive, but android support will hopefully be workable once I switch phones.
 * A few tiny tweeks and optimizations to get materials and textures unloaded from memory when they are no longer needed. This is a task that'd probably take at most 5 minutes, I just haven't decided on the implementation yet.
+* Look at upgrading the projects loading, possibly from a moo like database instead of having to have the areas stored as files and folders on the disk. In theory with the new modular system this is perfectly doable complete with an objects system that attaches to specific scripts, but it'll need some serious planning.
