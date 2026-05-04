@@ -1,6 +1,7 @@
 # Notes on the included example.
 This was a dump of my game dated aypral 28th 2026, with all the assets like textures and sounds removed.
 The example will not work if you attempt to start it without adding your own assets in first. Note that it is very rough because at the time of this writing, things are still being refined and i'm always rearanging.
+Also do note this example maybe grossly out of date as I don't sync it with progress I make with my game, this is just a showcase. It may at somepoint be removed depending on updates to the project.
 # What does this example do?
 It demonstrates a fully seamless open world game that has full on space travel and locations you can visit, complete with spaceships that are both explorable and pilotable. Including fully moving interior geometry.
 The open world is (with the acception of some TINY AO for graphics modes that support it because I didn't finish graphics mode effects scripting in time) 100 percent exclusively dynamic lit.
