@@ -391,6 +391,30 @@ plane.transform.localScale = new Vector3(0.3f, 1, 0.3f);
 plane.name = "plane";
 return plane;
 }
+public GameObject createcapsule()
+{
+GameObject obj = GameObject.CreatePrimitive(PrimitiveType.Capsule);
+obj.name = "capsule";
+return obj;
+}
+public GameObject createcylinder()
+{
+GameObject obj = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
+obj.name = "cylinder";
+return obj;
+}
+public GameObject createquad()
+{
+GameObject obj = GameObject.CreatePrimitive(PrimitiveType.Quad);
+obj.name = "quad";
+return obj;
+}
+public GameObject createsphere()
+{
+GameObject obj = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+obj.name = "sphere";
+return obj;
+}
 public GameObject createcube()
 {
 GameObject obj = GameObject.CreatePrimitive(PrimitiveType.Cube);
@@ -937,10 +961,6 @@ if(filestr[a].Length>=5&&filestr[a].Substring(0, 5)=="theta")
 {
 theta = System.Convert.ToSingle(filestr[a].Substring(6));
 }
-if(filestr[a].Length>=6&&filestr[a].Substring(0, 6)=="lookup")
-{
-ztheta = System.Convert.ToSingle(filestr[a].Substring(7));
-}
 if(filestr[a].Length>=8&&filestr[a].Substring(0, 8)=="location")
 {
 location = filestr[a].Substring(9).Replace("\n", "").Replace("\r", "").Replace(System.Environment.NewLine, "");
@@ -963,7 +983,6 @@ newfile.WriteLine("x "+orgx);
 newfile.WriteLine("y "+orgy);
 newfile.WriteLine("z "+orgz);
 newfile.WriteLine("theta "+System.Convert.ToString(theta));
-newfile.WriteLine("lookup "+System.Convert.ToString(ztheta));
 newfile.Flush();
 newfile.Close();
 }
@@ -1506,6 +1525,14 @@ public string roomsound;
 public AudioSource roomsource;
 public GameObject foundship;
 public List<GameObject> ships;
+public void createdir(string dir)
+{
+System.IO.Directory.CreateDirectory(globals.initdir+"/../"+dir);
+}
+public void deletedir(string dir)
+{
+System.IO.Directory.Delete(globals.initdir+"/../"+dir);
+}
 public List<string> getstates()
 {
 return globals.states;
@@ -1558,6 +1585,25 @@ System.IO.File.Delete(globals.initdir+"/../characters/"+remplayer.GetComponent<P
 globals.players.Remove(remplayer);
 GameObject.Destroy(remplayer);
 }
+}
+public ship createship(string shipname, string enginesound, float shipx, float shipy, float shipz, double galx, double galy, double galz)
+{
+GameObject newship = Instantiate(new GameObject(), new Vector3(0f, 0f, 0f), Quaternion.identity);
+newship.AddComponent<ship>();
+ship nship = newship.GetComponent<ship>();
+nship.maps = new List<map>();
+nship.states = new List<string>();
+nship.shipx = shipx;
+nship.shipy = shipy;
+nship.shipz = shipz;
+nship.galx = galx;
+nship.galy = galy;
+nship.galz = galz;
+nship.shipname = shipname;
+nship.saveenginesound = enginesound;
+nship.setupsounds();
+ships.Add(newship);
+return nship;
 }
 public PlayerController createplayer()
 {
