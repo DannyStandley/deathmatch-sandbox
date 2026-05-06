@@ -1525,6 +1525,72 @@ public string roomsound;
 public AudioSource roomsource;
 public GameObject foundship;
 public List<GameObject> ships;
+public void loaddb(string db)
+{
+PlayerController newplayer = null;
+map newmap = null;
+string[] dbstr = System.IO.File.ReadAllText(globals.initdir+"/../"+db).Split("\n");
+for(int a=0; a<dbstr.Length; ++a)
+{
+string dt = dbstr[a].Replace("\n", "").Replace("\r", "");
+if(dt=="gstate")
+{
+addstate(dbstr[a +1]);
+}
+if(dt=="map")
+{
+newmap = spawnmap(System.Convert.ToString(globals.maps.Count), 0, 0, 0, 0, 0, 0, 0, 0, 0, "");
+}
+if(dt.Length>=11&&dt.Substring(0, 11)=="maplocation")
+{
+newmap.location = dt.Substring(12);
+}
+if(dt.Length>=4&&dt.Substring(0, 4)=="mapx")
+{
+newmap.movex = System.Convert.ToSingle(dt.Substring(5));
+}
+if(dt.Length>=4&&dt.Substring(0, 4)=="mapy")
+{
+newmap.movey = System.Convert.ToSingle(dt.Substring(5));
+}
+if(dt.Length>=4&&dt.Substring(0, 4)=="mapz")
+{
+newmap.movez = System.Convert.ToSingle(dt.Substring(5));
+}
+if(dt.Length>=8&&dt.Substring(0, 8)=="maploadx")
+{
+newmap.loadx = System.Convert.ToSingle(dt.Substring(9));
+}
+if(dt.Length>=8&&dt.Substring(0, 8)=="maploady")
+{
+newmap.loady = System.Convert.ToSingle(dt.Substring(9));
+}
+if(dt.Length>=8&&dt.Substring(0, 8)=="maploadz")
+{
+newmap.loadz = System.Convert.ToSingle(dt.Substring(9));
+}
+if(dt.Length>=11&&dt.Substring(0, 11)=="maploadmaxx")
+{
+newmap.loadmaxx = System.Convert.ToSingle(dt.Substring(12));
+}
+if(dt.Length>=11&&dt.Substring(0, 11)=="maploadmaxy")
+{
+newmap.loadmaxy = System.Convert.ToSingle(dt.Substring(12));
+}
+if(dt.Length>=11&&dt.Substring(0, 11)=="maploadmaxz")
+{
+newmap.loadmaxz = System.Convert.ToSingle(dt.Substring(12));
+}
+if(dt.Length>=8&&dt.Substring(0, 8)=="mapstate")
+{
+gameObject.GetComponent<mapfunctions>().addstate(newmap, dt.Substring(9));
+}
+if(dt=="endmap")
+{
+newmap = null;
+}
+}
+}
 public void createdir(string dir)
 {
 System.IO.Directory.CreateDirectory(globals.initdir+"/../"+dir);
@@ -1690,7 +1756,6 @@ GameObject watcher = Instantiate(new GameObject(), new Vector3(0f, 0f, 0f), Quat
 watcher.AddComponent<PlayerController>();
 watcher.GetComponent<PlayerController>().reverbzone.GetComponent<AudioReverbZone>().enabled = false;
 watcher.GetComponent<PlayerController>().playername = "The Watcher";
-watcher.GetComponent<PlayerController>().location = "maps/galaxy/galaxy.lua";
 globals.players.Add(watcher);
 setupplayer();
 runscript(getsetting("startscript"), "");
