@@ -1576,7 +1576,7 @@ if(dt=="charz")
 {
 newplayer.orgz = System.Convert.ToSingle(dbstr[a +1]);
 }
-if(dt=="theta")
+if(dt=="chartheta")
 {
 newplayer.theta = System.Convert.ToSingle(dbstr[a +1]);
 }
@@ -1630,7 +1630,7 @@ newmap.loadmaxy = System.Convert.ToSingle(dbstr[a +1]);
 }
 if(dt=="maploadmaxz")
 {
-newmap.loadmaxy = System.Convert.ToSingle(dbstr[a +1]);
+newmap.loadmaxz = System.Convert.ToSingle(dbstr[a +1]);
 }
 if(dt=="mapstate")
 {
