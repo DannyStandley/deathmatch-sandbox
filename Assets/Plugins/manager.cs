@@ -1454,6 +1454,117 @@ public string roomsound;
 public AudioSource roomsource;
 public GameObject foundship;
 public List<GameObject> ships;
+public void savedb(string db)
+{
+if(System.IO.File.Exists(globals.initdir+"/../"+db)==true)
+{
+System.IO.File.Delete(globals.initdir+"/../"+db);
+}
+var newfile = System.IO.File.CreateText(globals.initdir+"/../"+db);
+foreach(string a in globals.states)
+{
+newfile.WriteLine("gstate");
+newfile.WriteLine(a);
+}
+foreach(GameObject a in ships)
+{
+ship starship = a.GetComponent<ship>();
+newfile.WriteLine("ship");
+newfile.WriteLine("shipname");
+newfile.WriteLine(starship.shipname);
+newfile.WriteLine("shipx");
+newfile.WriteLine(starship.shipx);
+newfile.WriteLine("shipy");
+newfile.WriteLine(starship.shipy);
+newfile.WriteLine("shipz");
+newfile.WriteLine(starship.shipz);
+newfile.WriteLine("shiplocation");
+newfile.WriteLine(starship.location);
+newfile.WriteLine("shipdir");
+newfile.WriteLine(starship.dir);
+newfile.WriteLine("shipspeed");
+newfile.WriteLine(starship.speed);
+newfile.WriteLine("shipmaxspeed");
+newfile.WriteLine(starship.maxspeed);
+newfile.WriteLine("shipdesiredspeed");
+newfile.WriteLine(starship.desiredspeed);
+newfile.WriteLine("shippower");
+newfile.WriteLine(starship.power);
+newfile.WriteLine("shipdesiredpower");
+newfile.WriteLine(starship.desiredpower);
+newfile.WriteLine("shippitch");
+newfile.WriteLine(starship.pitch);
+newfile.WriteLine("shipgalx");
+newfile.WriteLine(starship.galx);
+newfile.WriteLine("shipgaly");
+newfile.WriteLine(starship.galy);
+newfile.WriteLine("shipgalz");
+newfile.WriteLine(starship.galz);
+newfile.WriteLine("shipenginesound");
+newfile.WriteLine(starship.saveenginesound);
+foreach(string m in starship.states)
+{
+newfile.WriteLine("shipstate");
+newfile.WriteLine(m);
+}
+newfile.WriteLine("endship");
+}
+foreach(map a in globals.maps)
+{
+newfile.WriteLine("map");
+newfile.WriteLine("mapx");
+newfile.WriteLine(a.movex);
+newfile.WriteLine("mapy");
+newfile.WriteLine(a.movey);
+newfile.WriteLine("mapz");
+newfile.WriteLine(a.movez);
+newfile.WriteLine("maploadx");
+newfile.WriteLine(a.loadx);
+newfile.WriteLine("maploady");
+newfile.WriteLine(a.loady);
+newfile.WriteLine("maploadz");
+newfile.WriteLine(a.loadz);
+newfile.WriteLine("maploadmaxx");
+newfile.WriteLine(a.loadmaxx);
+newfile.WriteLine("maploadmaxy");
+newfile.WriteLine(a.loadmaxy);
+newfile.WriteLine("maploadmaxz");
+newfile.WriteLine(a.loadmaxz);
+newfile.WriteLine("maplocation");
+newfile.WriteLine(a.location);
+foreach(string m in a.states)
+{
+newfile.WriteLine("mapstate");
+newfile.WriteLine(m);
+}
+newfile.WriteLine("endmap");
+}
+foreach(GameObject a in globals.players)
+{
+PlayerController newplayer = a.GetComponent<PlayerController>();
+newfile.WriteLine("char");
+newfile.WriteLine("charname");
+newfile.WriteLine(newplayer.playername);
+newfile.WriteLine("charx");
+newfile.WriteLine(newplayer.orgx);
+newfile.WriteLine("chary");
+newfile.WriteLine(newplayer.orgy);
+newfile.WriteLine("charz");
+newfile.WriteLine(newplayer.orgz);
+newfile.WriteLine("charlocation");
+newfile.WriteLine(newplayer.location);
+newfile.WriteLine("chartheta");
+newfile.WriteLine(newplayer.theta);
+foreach(string m in newplayer.states)
+{
+newfile.WriteLine("charstate");
+newfile.WriteLine(m);
+}
+newfile.WriteLine("endchar");
+}
+newfile.Flush();
+newfile.Close();
+}
 public void loaddb(string db)
 {
 ship newship = null;
@@ -1788,11 +1899,7 @@ globals.blockpoints = new List<blockpoint>();
 globals.players = new List<GameObject>();
 ships = new List<GameObject>();
 loadsettings();
-GameObject watcher = Instantiate(new GameObject(), new Vector3(0f, 0f, 0f), Quaternion.identity);
-watcher.AddComponent<PlayerController>();
-watcher.GetComponent<PlayerController>().reverbzone.GetComponent<AudioReverbZone>().enabled = false;
-watcher.GetComponent<PlayerController>().playername = "The Watcher";
-globals.players.Add(watcher);
+loaddb(getsetting("db"));
 runscript(getsetting("startscript"), "");
 }
 public map spawnmap(string name, float x, float y, float z, float loadx, float loady, float loadz, float loadmaxx, float loadmaxy, float loadmaxz, string location)
