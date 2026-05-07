@@ -845,7 +845,6 @@ public float orgx = 0f;
 public float orgy = 0f;
 public float orgz = 0f;
 public string curtype = "";
-public string filename = "";
 private manager gamemanager;
 private luafunctions luaf;
 public float neworgx = 0f;
@@ -916,75 +915,6 @@ if(stepsounds.Count==1)
 {
 oldstepnum = -1;
 }
-}
-public void load(string pname)
-{
-filename = name;
-string file = System.IO.File.ReadAllText(globals.initdir+"/../characters/"+pname);
-string[] filestr = file.Split('\n');
-for(int a=0; a<filestr.Length; ++a)
-{
-filestr[a] = filestr[a].Replace("\r", "").Replace("\n", "");
-}
-for(int a=0; a<filestr.Length; ++a)
-{
-if(filestr[a].Length>=5&&filestr[a].Substring(0, 5)=="state")
-{
-string statestr = filestr[a].Substring(6).Replace("\n", "").Replace("\r", "").Replace(System.Environment.NewLine, "");
-if(checkstate(statestr)==0)
-{
-states.Add(statestr);
-}
-}
-if(filestr[a].Length>=5&&filestr[a].Substring(0, 5)=="theta")
-{
-theta = System.Convert.ToSingle(filestr[a].Substring(6));
-}
-if(filestr[a].Length>=4&&filestr[a].Substring(0, 4)=="name")
-{
-playername = filestr[a].Substring(5).Replace("\n", "").Replace("\r", "").Replace(System.Environment.NewLine, "");
-filename = playername;
-}
-if(filestr[a].Length>=1&&filestr[a].Substring(0, 1)=="x")
-{
-orgx = System.Convert.ToSingle(filestr[a].Substring(2));
-}
-if(filestr[a].Length>=1&&filestr[a].Substring(0, 1)=="y")
-{
-orgy = System.Convert.ToSingle(filestr[a].Substring(2));
-}
-if(filestr[a].Length>=1&&filestr[a].Substring(0, 1)=="z")
-{
-orgz = System.Convert.ToSingle(filestr[a].Substring(2));
-}
-if(filestr[a].Length>=5&&filestr[a].Substring(0, 5)=="theta")
-{
-theta = System.Convert.ToSingle(filestr[a].Substring(6));
-}
-if(filestr[a].Length>=8&&filestr[a].Substring(0, 8)=="location")
-{
-location = filestr[a].Substring(9).Replace("\n", "").Replace("\r", "").Replace(System.Environment.NewLine, "");
-}}
-}
-public void save()
-{
-if(System.IO.File.Exists(globals.initdir+"/../characters/"+filename)==true)
-{
-System.IO.File.Delete(globals.initdir+"/../characters/"+filename);
-}
-var newfile = System.IO.File.CreateText(globals.initdir+"/../characters/"+filename);
-newfile.WriteLine("name "+playername);
-foreach(string a in states)
-{
-newfile.WriteLine("state "+a);
-}
-newfile.WriteLine("location "+location);
-newfile.WriteLine("x "+orgx);
-newfile.WriteLine("y "+orgy);
-newfile.WriteLine("z "+orgz);
-newfile.WriteLine("theta "+System.Convert.ToString(theta));
-newfile.Flush();
-newfile.Close();
 }
 public void loadsteps(string type)
 {
@@ -1433,7 +1363,6 @@ public LuaFunction luafunction;
 public class map
 {
 public List<string> states;
-public string filename = "";
 public string location = "";
 public int loaded = 0;
 public List<location> locations;
@@ -1527,9 +1456,14 @@ public GameObject foundship;
 public List<GameObject> ships;
 public void loaddb(string db)
 {
+ship newship = null;
 PlayerController newplayer = null;
 map newmap = null;
 string[] dbstr = System.IO.File.ReadAllText(globals.initdir+"/../"+db).Split("\n");
+for(int a=0; a<dbstr.Length; ++a)
+{
+dbstr[a] = dbstr[a].Replace("\r", "").Replace("\n", "");
+}
 for(int a=0; a<dbstr.Length; ++a)
 {
 string dt = dbstr[a].Replace("\n", "").Replace("\r", "");
@@ -1537,53 +1471,170 @@ if(dt=="gstate")
 {
 addstate(dbstr[a +1]);
 }
+if(dt=="ship")
+{
+newship = createship();
+}
+if(dt=="shipname")
+{
+newship.shipname = dbstr[a +1];
+}
+if(dt=="shipx")
+{
+newship.galx = System.Convert.ToSingle(dbstr[a +1]);
+}
+if(dt=="shipy")
+{
+newship.shipy = System.Convert.ToSingle(dbstr[a +1]);
+}
+if(dt=="shipz")
+{
+newship.shipz = System.Convert.ToSingle(dbstr[a +1]);
+}
+if(dt=="shipgalx")
+{
+newship.galx = System.Convert.ToSingle(dbstr[a +1]);
+}
+if(dt=="shipgaly")
+{
+newship.galy = System.Convert.ToSingle(dbstr[a +1]);
+}
+if(dt=="shipgalz")
+{
+newship.galz = System.Convert.ToSingle(dbstr[a +1]);
+}
+if(dt=="shipacc")
+{
+newship.acc = System.Convert.ToSingle(dbstr[a +1]);
+}
+if(dt=="shipdir")
+{
+newship.dir = dbstr[a +1];
+}
+if(dt=="shiplocation")
+{
+newship.location = dbstr[a +1];
+}
+if(dt=="shipmaxspeed")
+{
+newship.maxspeed = System.Convert.ToSingle(dbstr[a +1]);
+}
+if(dt=="shipspeed")
+{
+newship.speed = System.Convert.ToSingle(dbstr[a +1]);
+}
+if(dt=="shipdesiredspeed")
+{
+newship.desiredspeed = System.Convert.ToSingle(dbstr[a +1]);
+}
+if(dt=="shippower")
+{
+newship.power = System.Convert.ToSingle(dbstr[a +1]);
+}
+if(dt=="shipdesiredpower")
+{
+newship.desiredpower = System.Convert.ToSingle(dbstr[a +1]);
+}
+if(dt=="shipenginesound")
+{
+newship.saveenginesound = dbstr[a +1];
+}
+if(dt=="shippitch")
+{
+newship.pitch = System.Convert.ToSingle(dbstr[a +1]);
+}
+if(dt=="shipstate")
+{
+newship.addstate(dbstr[a +1]);
+}
+if(dt=="endship")
+{
+newship.setupsounds();
+newship = null;
+}
+if(dt=="char")
+{
+newplayer = createplayer();
+}
+if(dt=="charname")
+{
+newplayer.playername = dbstr[a +1];
+}
+if(dt=="charlocation")
+{
+newplayer.location = dbstr[a +1];
+}
+if(dt=="charx")
+{
+newplayer.orgx = System.Convert.ToSingle(dbstr[a +1]);
+}
+if(dt=="chary")
+{
+newplayer.orgy = System.Convert.ToSingle(dbstr[a +1]);
+}
+if(dt=="charz")
+{
+newplayer.orgz = System.Convert.ToSingle(dbstr[a +1]);
+}
+if(dt=="theta")
+{
+newplayer.theta = System.Convert.ToSingle(dbstr[a +1]);
+}
+if(dt=="charstate")
+{
+newplayer.addstate(dbstr[a +1]);
+}
+if(dt=="endchar")
+{
+newplayer = null;
+}
 if(dt=="map")
 {
 newmap = spawnmap(System.Convert.ToString(globals.maps.Count), 0, 0, 0, 0, 0, 0, 0, 0, 0, "");
 }
-if(dt.Length>=11&&dt.Substring(0, 11)=="maplocation")
+if(dt=="maplocation")
 {
-newmap.location = dt.Substring(12);
+newmap.location = dbstr[a +1];
 }
-if(dt.Length>=4&&dt.Substring(0, 4)=="mapx")
+if(dt=="mapx")
 {
-newmap.movex = System.Convert.ToSingle(dt.Substring(5));
+newmap.movex = System.Convert.ToSingle(dbstr[a +1]);
 }
-if(dt.Length>=4&&dt.Substring(0, 4)=="mapy")
+if(dt=="mapy")
 {
-newmap.movey = System.Convert.ToSingle(dt.Substring(5));
+newmap.movey = System.Convert.ToSingle(dbstr[a +1]);
 }
-if(dt.Length>=4&&dt.Substring(0, 4)=="mapz")
+if(dt=="mapz")
 {
-newmap.movez = System.Convert.ToSingle(dt.Substring(5));
+newmap.movez = System.Convert.ToSingle(dbstr[a +1]);
 }
-if(dt.Length>=8&&dt.Substring(0, 8)=="maploadx")
+if(dt=="maploadx")
 {
-newmap.loadx = System.Convert.ToSingle(dt.Substring(9));
+newmap.loadx = System.Convert.ToSingle(dbstr[a +1]);
 }
-if(dt.Length>=8&&dt.Substring(0, 8)=="maploady")
+if(dt=="maploady")
 {
-newmap.loady = System.Convert.ToSingle(dt.Substring(9));
+newmap.loady = System.Convert.ToSingle(dbstr[a +1]);
 }
-if(dt.Length>=8&&dt.Substring(0, 8)=="maploadz")
+if(dt=="maploadz")
 {
-newmap.loadz = System.Convert.ToSingle(dt.Substring(9));
+newmap.loadz = System.Convert.ToSingle(dbstr[a +1]);
 }
-if(dt.Length>=11&&dt.Substring(0, 11)=="maploadmaxx")
+if(dt=="maploadmaxx")
 {
-newmap.loadmaxx = System.Convert.ToSingle(dt.Substring(12));
+newmap.loadmaxx = System.Convert.ToSingle(dbstr[a +1]);
 }
-if(dt.Length>=11&&dt.Substring(0, 11)=="maploadmaxy")
+if(dt=="maploadmaxy")
 {
-newmap.loadmaxy = System.Convert.ToSingle(dt.Substring(12));
+newmap.loadmaxy = System.Convert.ToSingle(dbstr[a +1]);
 }
-if(dt.Length>=11&&dt.Substring(0, 11)=="maploadmaxz")
+if(dt=="maploadmaxz")
 {
-newmap.loadmaxz = System.Convert.ToSingle(dt.Substring(12));
+newmap.loadmaxy = System.Convert.ToSingle(dbstr[a +1]);
 }
-if(dt.Length>=8&&dt.Substring(0, 8)=="mapstate")
+if(dt=="mapstate")
 {
-gameObject.GetComponent<mapfunctions>().addstate(newmap, dt.Substring(9));
+gameObject.GetComponent<mapfunctions>().addstate(newmap, dbstr[a +1]);
 }
 if(dt=="endmap")
 {
@@ -1644,30 +1695,17 @@ if(a.lua["player"]==remplayer.GetComponent<PlayerController>())
 removefunction(a);
 }
 }
-if(System.IO.File.Exists(globals.initdir+"/../characters/"+remplayer.GetComponent<PlayerController>().filename)==true)
-{
-System.IO.File.Delete(globals.initdir+"/../characters/"+remplayer.GetComponent<PlayerController>().filename);
-}
 globals.players.Remove(remplayer);
 GameObject.Destroy(remplayer);
 }
 }
-public ship createship(string shipname, string enginesound, float shipx, float shipy, float shipz, double galx, double galy, double galz)
+public ship createship()
 {
 GameObject newship = Instantiate(new GameObject(), new Vector3(0f, 0f, 0f), Quaternion.identity);
 newship.AddComponent<ship>();
 ship nship = newship.GetComponent<ship>();
 nship.maps = new List<map>();
 nship.states = new List<string>();
-nship.shipx = shipx;
-nship.shipy = shipy;
-nship.shipz = shipz;
-nship.galx = galx;
-nship.galy = galy;
-nship.galz = galz;
-nship.shipname = shipname;
-nship.saveenginesound = enginesound;
-nship.setupsounds();
 ships.Add(newship);
 return nship;
 }
@@ -1750,14 +1788,11 @@ globals.blockpoints = new List<blockpoint>();
 globals.players = new List<GameObject>();
 ships = new List<GameObject>();
 loadsettings();
-loadships();
-loadstates();
 GameObject watcher = Instantiate(new GameObject(), new Vector3(0f, 0f, 0f), Quaternion.identity);
 watcher.AddComponent<PlayerController>();
 watcher.GetComponent<PlayerController>().reverbzone.GetComponent<AudioReverbZone>().enabled = false;
 watcher.GetComponent<PlayerController>().playername = "The Watcher";
 globals.players.Add(watcher);
-setupplayer();
 runscript(getsetting("startscript"), "");
 }
 public map spawnmap(string name, float x, float y, float z, float loadx, float loady, float loadz, float loadmaxx, float loadmaxy, float loadmaxz, string location)
@@ -1777,148 +1812,6 @@ newmap.location = location;
 globals.maps.Add(newmap);
 return newmap;
 }
-public void loadship(string filename)
-{
-string file = System.IO.File.ReadAllText(globals.initdir+"/../"+filename);
-string[] filestr = file.Split('\n');
-List<map> shipmaps = new List<map>();
-string shipdir = "";
-float shipdesiredspeed = 0f;
-float shipacc = 100f;
-List<string> states = new List<string>();
-double shipgalx = 0f;
-double shipgaly = 0f;
-double shipgalz = 0f;
-float shipx = 0f;
-float shipy = 0f;
-float shipz = 0f;
-string shiplocation = "";
-string shipname = "";
-float maxspeed = 0f;
-float shipspeed = 0f;
-float shippower = 0f;
-float shipdesiredpower = 0f;
-float shippitch = 0f;
-string enginesound = "";
-for(int a=0; a<filestr.Length; ++a)
-{
-filestr[a] = filestr[a].Replace("\r", "").Replace("\n", "");
-}
-for(int m=0; m<filestr.Length; ++m)
-{
-if(filestr[m].Length>=8&&filestr[m].Substring(0, 7)=="shipmap")
-{
-map foundmap = findmap(filestr[m].Substring(8).Replace("\n", "").Replace("\r", "").Replace("\r\n", "").Replace(System.Environment.NewLine, ""));
-if(foundmap==null)
-{
-map map1 = loadmap(filestr[m].Substring(8).Replace(System.Environment.NewLine, "").Replace(".lua", ".map"));
-foundmap = map1;
-}
-shipmaps.Add(foundmap);
-}
-if(filestr[m].Length>=8&&filestr[m].Substring(0, 7)=="shipdir")
-{
-shipdir = filestr[m].Substring(8).Replace("\n", "").Replace("\r", "").Replace("\r\n", "").Replace(System.Environment.NewLine, "");
-}
-if(filestr[m].Length>=16&&filestr[m].Substring(0, 16)=="shipdesiredspeed")
-{
-shipdesiredspeed = System.Convert.ToSingle(filestr[m].Substring(17));
-}
-if(filestr[m].Length>=10&&filestr[m].Substring(0, 10)=="shipaccell")
-{
-shipacc = System.Convert.ToSingle(filestr[m].Substring(11));
-}
-if(filestr[m].Length>=9&&filestr[m].Substring(0, 9)=="shippower")
-{
-shippower = System.Convert.ToSingle(filestr[m].Substring(10));
-}
-if(filestr[m].Length>=16&&filestr[m].Substring(0, 16)=="shipdesiredpower")
-{
-shipdesiredpower = System.Convert.ToSingle(filestr[m].Substring(17));
-}
-if(filestr[m].Length>=9&&filestr[m].Substring(0, 9)=="shipspeed")
-{
-shipspeed = System.Convert.ToSingle(filestr[m].Substring(10));
-}
-if(filestr[m].Length>=9&&filestr[m].Substring(0, 9)=="shippitch")
-{
-shippitch = System.Convert.ToSingle(filestr[m].Substring(10));
-}
-if(filestr[m].Length>=8&&filestr[m].Substring(0, 8)=="shipname")
-{
-shipname = filestr[m].Substring(9).Replace("\n", "").Replace("\r", "").Replace("\r\n", "").Replace(System.Environment.NewLine, "");
-}
-if(filestr[m].Length>=15&&filestr[m].Substring(0, 15)=="shipenginesound")
-{
-enginesound = filestr[m].Substring(16).Replace("\n", "").Replace("\r", "").Replace("\r\n", "").Replace(System.Environment.NewLine, "");
-}
-if(filestr[m].Length>=12&&filestr[m].Substring(0, 12)=="shipmaxspeed")
-{
-maxspeed = float.Parse(filestr[m].Substring(13));
-}
-if(filestr[m].Length>=9&&filestr[m].Substring(0, 9)=="shipstate")
-{
-states.Add(filestr[m].Substring(10).Replace("\n", "").Replace("\r", "").Replace("\r\n", "").Replace(System.Environment.NewLine, ""));
-}
-if(filestr[m].Length>=8&&filestr[m].Substring(0, 8)=="shipgalx")
-{
-shipgalx = System.Convert.ToDouble(filestr[m].Substring(9));
-}
-if(filestr[m].Length>=8&&filestr[m].Substring(0, 8)=="shipgaly")
-{
-shipgaly = System.Convert.ToDouble(filestr[m].Substring(9));
-}
-if(filestr[m].Length>=8&&filestr[m].Substring(0, 8)=="shipgalz")
-{
-shipgalz = System.Convert.ToDouble(filestr[m].Substring(9));
-}
-if(filestr[m].Length>=5&&filestr[m].Substring(0, 5)=="shipx")
-{
-shipx = System.Convert.ToSingle(filestr[m].Substring(6));
-}
-if(filestr[m].Length>=5&&filestr[m].Substring(0, 5)=="shipy")
-{
-shipy = System.Convert.ToSingle(filestr[m].Substring(6));
-}
-if(filestr[m].Length>=5&&filestr[m].Substring(0, 5)=="shipz")
-{
-shipz = System.Convert.ToSingle(filestr[m].Substring(6));
-}
-if(filestr[m].Length>=12&&filestr[m].Substring(0, 12)=="shiplocation")
-{
-shiplocation = filestr[m].Substring(13).Replace("\n", "").Replace("\r", "").Replace("\r\n", "").Replace(System.Environment.NewLine, "");
-}
-}
-GameObject ship1 = Instantiate(new GameObject(), new Vector3(0f, 0f, 0f), Quaternion.identity);
-ship1.name = shipname;
-ship1.AddComponent<ship>();
-ship shipscript = ship1.GetComponent<ship>();
-shipscript.maps = shipmaps;
-shipscript.dir = shipdir;
-shipscript.states = states;
-shipscript.acc = shipacc;
-shipscript.power = shippower;
-shipscript.desiredpower = shipdesiredpower;
-shipscript.desiredspeed = shipdesiredspeed;
-shipscript.speed = shipspeed;
-shipscript.pitch = shippitch;
-shipscript.saveable = 1;
-shipscript.shipname = shipname;
-shipscript.maxspeed = maxspeed;
-shipscript.galx = shipgalx;
-shipscript.galy = shipgaly;
-shipscript.galz = shipgalz;
-shipscript.shipx = shipx;
-shipscript.shipy = shipy;
-shipscript.shipz = shipz;
-shipscript.location = shiplocation;
-if(enginesound!="")
-{
-shipscript.saveenginesound = enginesound;
-}
-ship1.GetComponent<ship>().setupsounds();
-ships.Add(ship1);
-}
 public GameObject findship(string shipname)
 {
 foreach(GameObject a in ships)
@@ -1929,76 +1822,6 @@ return a;
 }
 }
 return null;
-}
-public void loadstates()
-{
-string file = System.IO.File.ReadAllText(globals.initdir+"/../states");
-string[] filestr = file.Split("\n");
-foreach(string a in filestr)
-{
-globals.states.Add(a.Replace("\r", "").Replace("\n", ""));
-}
-}
-public void savestates()
-{
-if(System.IO.File.Exists(globals.initdir+"/../states")==true)
-{
-System.IO.File.Delete(globals.initdir+"/../states");
-}
-var newfile = System.IO.File.CreateText(globals.initdir+"/../states");
-foreach(string a in globals.states)
-{
-if(a!="")
-{
-newfile.WriteLine(a);
-}
-}
-newfile.Flush();
-newfile.Close();
-}
-public void saveships()
-{
-foreach(GameObject a in ships)
-{
-ship shipscript = a.GetComponent<ship>();
-if(shipscript.saveable==1)
-{
-var newfile = System.IO.File.CreateText(globals.initdir+"/../vehicles and objects/"+shipscript.shipname+".ship");
-newfile.WriteLine("shipname "+shipscript.shipname);
-newfile.WriteLine("shipdir "+shipscript.dir);
-newfile.WriteLine("shipaccell "+shipscript.acc);
-newfile.WriteLine("shipgalx "+shipscript.galx);
-newfile.WriteLine("shipgaly "+shipscript.galy);
-newfile.WriteLine("shipgalz "+shipscript.galz);
-newfile.WriteLine("shipx "+shipscript.shipx);
-newfile.WriteLine("shipy "+shipscript.shipy);
-newfile.WriteLine("shipz "+shipscript.shipz);
-newfile.WriteLine("shiplocation "+shipscript.location);
-newfile.WriteLine("shipmaxspeed "+System.Convert.ToString(shipscript.maxspeed));
-newfile.WriteLine("shipspeed "+System.Convert.ToString(shipscript.speed));
-newfile.WriteLine("shipdesiredspeed "+System.Convert.ToString(shipscript.desiredspeed));
-newfile.WriteLine("shipenginesound "+shipscript.saveenginesound);
-newfile.WriteLine("shippower "+System.Convert.ToString(shipscript.power));
-newfile.WriteLine("shipdesiredpower "+System.Convert.ToString(shipscript.desiredpower));
-if(shipscript.source!=null)
-{
-newfile.WriteLine("shippitch "+System.Convert.ToString(shipscript.pitch));
-}
-foreach(map m in shipscript.maps)
-{
-if(m!=null&&m.name!=""&&gameObject.GetComponent<mapfunctions>().checkstate(m, "dontsave")==0)
-{
-newfile.WriteLine("shipmap "+m.name);
-}
-}
-foreach(string m in shipscript.states)
-{
-newfile.WriteLine("shipstate "+m);
-}
-newfile.Flush();
-newfile.Close();
-}
-}
 }
 private void Update()
 {
@@ -2569,23 +2392,6 @@ public List<GameObject> getships()
 {
 return ships;
 }
-public void setupplayer()
-{
-List<string> characters = buildstringlist(buildfilelist("characters", ""));
-for(int a=0; a<characters.Count; ++a)
-{
-GameObject player = Instantiate(new GameObject(), new Vector3(1f, 1f, 1f), Quaternion.identity);
-globals.players.Add(player);
-player.AddComponent<PlayerController>();
-if(globals.curplayer!=a)
-{
-player.GetComponent<PlayerController>().reverbzone.GetComponent<AudioReverbZone>().enabled = false;
-}
-player.GetComponent<PlayerController>().load(characters[a]);
-}
-Resources.UnloadUnusedAssets();
-System.GC.Collect();
-}
 public void movecamera(float x, float y, float z, int lerp=0)
 {
 if(lerp==0)
@@ -2767,14 +2573,6 @@ removemap.loaded = 0;
 }
 }
 }
-public void loadships()
-{
-List<string> files = buildlistfromstring(buildfilelist("vehicles and objects", "vehicles and objects"), "|");
-foreach(string a in files)
-{
-loadship("vehicles and objects/"+a);
-}
-}
 public void removemap(map newmap)
 {
 unloadmap(newmap.name);
@@ -2856,78 +2654,11 @@ newmesh.RecalculateBounds(); // Re-measure the truth
 globals.models.Add(newmesh);
 return newmesh;
 }
-public map loadmap(string filename)
-{
-map newmap = new map();
-newmap.filename = filename;
-string file = System.IO.File.ReadAllText(globals.initdir+"/../"+filename);
-string[] filestr = file.Split("\n");
-for(int a=0; a<filestr.Length; ++a)
-{
-filestr[a] = filestr[a].Replace("\r", "").Replace("\n", "");
-}
-foreach(string a in filestr)
-{
-if(a.Length>=8&&a.Substring(0, 7)=="mapname")
-{
-newmap.name = a.Substring(8).Replace("\n", "").Replace("\r", "").Replace("\r\n", "").Replace(System.Environment.NewLine, "");
-}
-if(a.Length>=9&&a.Substring(0, 8)=="mapstate")
-{
-newmap.states.Add(a.Substring(9).Replace(System.Environment.NewLine, ""));
-}
-if(a.Length>=9&&a.Substring(0, 8)=="maploadx")
-{
-newmap.loadx = System.Convert.ToSingle(a.Substring(9));
-}
-if(a.Length>=9&&a.Substring(0, 8)=="maploady")
-{
-newmap.loady = System.Convert.ToSingle(a.Substring(9));
-}
-if(a.Length>=9&&a.Substring(0, 8)=="maploadz")
-{
-newmap.loadz = System.Convert.ToSingle(a.Substring(9));
-}
-if(a.Length>=12&&a.Substring(0, 11)=="maploadmaxx")
-{
-newmap.loadmaxx = System.Convert.ToSingle(a.Substring(12));
-}
-if(a.Length>=12&&a.Substring(0, 11)=="maploadmaxy")
-{
-newmap.loadmaxy = System.Convert.ToSingle(a.Substring(12));
-}
-if(a.Length>=12&&a.Substring(0, 11)=="maploadmaxz")
-{
-newmap.loadmaxz = System.Convert.ToSingle(a.Substring(12));
-}
-if(a.Length>=5&&a.Substring(0, 4)=="mapx")
-{
-newmap.movex = System.Convert.ToSingle(a.Substring(5));
-}
-if(a.Length>=5&&a.Substring(0, 4)=="mapy")
-{
-newmap.movey = System.Convert.ToSingle(a.Substring(5));
-}
-if(a.Length>=5&&a.Substring(0, 4)=="mapz")
-{
-newmap.movez = System.Convert.ToSingle(a.Substring(5));
-}
-if(a.Length>=12&&a.Substring(0, 11)=="maplocation")
-{
-newmap.location = a.Substring(12).Replace("\n", "").Replace("\r", "").Replace("\r\n", "").Replace(System.Environment.NewLine, "");
-}
-}
-newmap.x = newmap.movex;
-newmap.y = newmap.movey;
-newmap.z = newmap.movez;
-globals.maps.Add(newmap);
-return newmap;
-}
 public map findmap(string mapname)
 {
 foreach(map a in globals.maps)
 {
-if(a.name==mapname||a.filename==mapname)
+if(a.name==mapname)
 {
 return a;
 }
@@ -2978,41 +2709,6 @@ public void setcamerafov(int fov)
 {
 GameObject.Find("Main Camera").GetComponent<Camera>().fieldOfView = fov;
 }
-public void savemaps()
-{
-foreach(map a in globals.maps)
-{
-if(a.name!=""&&a.name!=".lua"&&a.filename!=""&&a.filename!=".map"&&gameObject.GetComponent<mapfunctions>().checkstate(a, "nofile")==0)
-{
-savemap(a);
-}
-}
-}
-public void savemap(map a)
-{
-if(System.IO.File.Exists(globals.initdir+"/../"+a.filename))
-{
-System.IO.File.Delete(globals.initdir+"/../"+a.filename);
-}
-var file = System.IO.File.CreateText(globals.initdir+"/../"+a.filename);
-file.WriteLine("mapname "+a.name);
-file.WriteLine("maplocation "+a.location);
-file.WriteLine("mapx "+a.movex);
-file.WriteLine("mapy "+a.movey);
-file.WriteLine("mapz "+a.movez);
-file.WriteLine("maploadx "+a.loadx);
-file.WriteLine("maploady "+a.loady);
-file.WriteLine("maploadz "+a.loadz);
-file.WriteLine("maploadmaxx "+a.loadmaxx);
-file.WriteLine("maploadmaxy "+a.loadmaxy);
-file.WriteLine("maploadmaxz "+a.loadmaxz);
-foreach(string m in a.states)
-{
-file.WriteLine("mapstate "+m);
-}
-file.Flush();
-file.Close();
-}
 public void plog(string logString, string stackTrace, LogType type)
 {
 System.IO.File.AppendAllText(globals.initdir+"/../plog.log", logString+"\r\n");
@@ -3032,7 +2728,7 @@ foreach(GameObject a in ships)
 ship shipscript = a.GetComponent<ship>();
 foreach(map m in shipscript.maps)
 {
-if(m.name==location||m.filename==location)
+if(m.name==location)
 {
 return shipscript;
 }
