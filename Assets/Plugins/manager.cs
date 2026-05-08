@@ -2048,7 +2048,7 @@ LuaFunction newupdatescript = luaintp.lua[functionname] as LuaFunction;
 luaintp.luafunction = newupdatescript;
 globals.addscripts.Add(luaintp);
 }
-public void runscript(string scriptname, string mapname)
+public void runscript(string scriptname, string mapname, int file=1)
 {
 map usemap = findmap(scriptname);
 if(usemap!=null)
@@ -2065,7 +2065,14 @@ newlua["manager"] = GetComponent<manager>();
 newlua["sound"] = gameObject.GetComponent<SoundManager>();
 newlua["luafunctions"] = gameObject.GetComponent<luafunctions>();
 newlua["mapfunctions"] = GetComponent<mapfunctions>();
+if(file==1)
+{
 newlua.DoFile(globals.initdir+"/../"+scriptname);
+}
+else
+{
+newlua.DoString(scriptname);
+}
 newlua.Dispose();
 newlua = null;
 }
