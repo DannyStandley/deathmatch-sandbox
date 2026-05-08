@@ -2025,12 +2025,9 @@ public float getdeltatime()
 {
 return Time.deltaTime;
 }
-public void addfunction(string scriptname, string functionname, string mapname="", PlayerController player=null)
+public void addfunction(string scriptname, string functionname, string mapname="", int file=1)
 {
-if(player==null)
-{
-player = globals.players[globals.curplayer].GetComponent<PlayerController>();
-}
+PlayerController player = globals.players[globals.curplayer].GetComponent<PlayerController>();
 luaupdatefunction luaintp = new luaupdatefunction();
 luaintp.lua = new Lua();
 luaintp.mapname = mapname;
@@ -2043,7 +2040,14 @@ luaintp.lua["manager"] = GetComponent<manager>();
 luaintp.lua["sound"] = gameObject.GetComponent<SoundManager>();
 luaintp.lua["luafunctions"] = gameObject.GetComponent<luafunctions>();
 luaintp.lua["mapfunctions"] = GetComponent<mapfunctions>();
+if(file==1)
+{
 luaintp.lua.DoFile(globals.initdir+"/../"+scriptname);
+}
+else
+{
+luaintp.lua.DoString(scriptname);
+}
 LuaFunction newupdatescript = luaintp.lua[functionname] as LuaFunction;
 luaintp.luafunction = newupdatescript;
 globals.addscripts.Add(luaintp);
