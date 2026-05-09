@@ -11,6 +11,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using System.Runtime.InteropServices;
 using NLua;
 public class verb
 {
@@ -1645,7 +1646,10 @@ if(dbstr[m]=="endverbcode")
 {
 break;
 }
+if(dbstr[m]!="")
+{
 newverb.code = newverb.code+dbstr[m]+"\n";
+}
 }
 }
 if(dt=="endverb")
