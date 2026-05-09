@@ -221,10 +221,11 @@ sendserver.Send(writer, DeliveryMethod.Unreliable);
 }
 public class mapfunctions : MonoBehaviour
 {
-public void attachvideo(GameObject obj, string videofile)
+public void attachvideo(GameObject obj, string videofile, float blend=0)
 {
 obj.AddComponent<AudioSource>();
 obj.AddComponent<VideoPlayer>();
+obj.GetComponent<AudioSource>().spatialBlend = blend;
 obj.GetComponent<VideoPlayer>().playOnAwake = false;
 obj.GetComponent<VideoPlayer>().source = VideoSource.Url;
 obj.GetComponent<VideoPlayer>().renderMode = VideoRenderMode.MaterialOverride;
