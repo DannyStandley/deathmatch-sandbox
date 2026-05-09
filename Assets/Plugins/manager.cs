@@ -2042,7 +2042,15 @@ foreach(luaupdatefunction a in globals.updatefunctions)
 {
 if(a!=null&&a.luafunction!=null)
 {
+try
+{
 a.luafunction.Call();
+}
+catch(NLua.Exceptions.LuaScriptException ex)
+{
+runscript(findverb("system:handle_uncaught_error").code, ex.Message, 0);
+removefunction(a);
+}
 }
 }
 foreach(luaupdatefunction a in globals.removescripts)
@@ -2150,6 +2158,8 @@ newlua["manager"] = GetComponent<manager>();
 newlua["sound"] = gameObject.GetComponent<SoundManager>();
 newlua["luafunctions"] = gameObject.GetComponent<luafunctions>();
 newlua["mapfunctions"] = GetComponent<mapfunctions>();
+try
+{
 if(file==1)
 {
 newlua.DoFile(globals.initdir+"/../"+scriptname);
@@ -2157,6 +2167,11 @@ newlua.DoFile(globals.initdir+"/../"+scriptname);
 else
 {
 newlua.DoString(scriptname);
+}
+}
+catch(NLua.Exceptions.LuaScriptException ex)
+{
+runscript(findverb("system:handle_uncaught_error").code, ex.Message, 0);
 }
 newlua.Dispose();
 newlua = null;
