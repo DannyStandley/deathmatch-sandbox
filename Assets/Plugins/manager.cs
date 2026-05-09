@@ -12,6 +12,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using NLua;
+public class verb
+{
+public string name = "";
+public string type = "";
+public string code = "";
+}
 public class sound : MonoBehaviour
 {
 public AudioClip clip;
@@ -702,7 +708,8 @@ public float power = 0f;
 public float desiredpower = 0f;
 private void Start()
 {
-GameObject.Find("Game Manager").GetComponent<manager>().addfunction("scripts/ship/movement.lua", "update", shipname);
+manager gmanager = GameObject.Find("Game Manager").GetComponent<manager>();
+gmanager.addfunction(gmanager.findverb("starship:move").code, "update", shipname, 0);
 }
 public int checkstate(string state)
 {
@@ -1354,6 +1361,7 @@ public string mapname = "";
 }
 public class luaupdatefunction
 {
+public int file = 0;
 public string mapname = "";
 public string script = "";
 public string name = "";
@@ -1415,6 +1423,7 @@ public string value = "";
 
 public static class globals
 {
+public static List<verb> verbs;
 public static string initdir;
 public static List<Mesh> models;
 public static string outputvolume;
@@ -1454,6 +1463,27 @@ public string roomsound;
 public AudioSource roomsource;
 public GameObject foundship;
 public List<GameObject> ships;
+public verb findverb(string vname)
+{
+foreach(verb a in globals.verbs)
+{
+if(a.name==vname)
+{
+return a;
+}
+}
+return null;
+}
+public void removeverb(verb rmverb)
+{
+globals.verbs.Remove(rmverb);
+}
+public verb addverb()
+{
+verb newverb = new verb();
+globals.verbs.Add(newverb);
+return newverb;
+}
 public void savedb(string db)
 {
 if(System.IO.File.Exists(globals.initdir+"/../"+db)==true)
@@ -1465,6 +1495,18 @@ foreach(string a in globals.states)
 {
 newfile.WriteLine("gstate");
 newfile.WriteLine(a);
+}
+foreach(verb a in globals.verbs)
+{
+newfile.WriteLine("verb");
+newfile.WriteLine("verbname");
+newfile.WriteLine(a.name);
+newfile.WriteLine("verbtype");
+newfile.WriteLine(a.type);
+newfile.WriteLine("verbcode");
+newfile.WriteLine(a.code);
+newfile.WriteLine("endverbcode");
+newfile.WriteLine("endverb");
 }
 foreach(GameObject a in ships)
 {
@@ -1567,6 +1609,7 @@ newfile.Close();
 }
 public void loaddb(string db)
 {
+verb newverb = null;
 ship newship = null;
 PlayerController newplayer = null;
 map newmap = null;
@@ -1581,6 +1624,33 @@ string dt = dbstr[a].Replace("\n", "").Replace("\r", "");
 if(dt=="gstate")
 {
 addstate(dbstr[a +1]);
+}
+if(dt=="verb")
+{
+newverb = addverb();
+}
+if(dt=="verbname")
+{
+newverb.name = dbstr[a +1];
+}
+if(dt=="verbtype")
+{
+newverb.type = dbstr[a +1];
+}
+if(dt=="verbcode")
+{
+for(int m=a +1; m<dbstr.Length; ++m)
+{
+if(dbstr[m]=="endverbcode")
+{
+break;
+}
+newverb.code = newverb.code+dbstr[m]+"\n";
+}
+}
+if(dt=="endverb")
+{
+newverb = null;
 }
 if(dt=="ship")
 {
@@ -1882,6 +1952,7 @@ RenderSettings.ambientSkyColor = new Color(0f, 0f, 0f, 1);
 RenderSettings.ambientGroundColor = new Color(0f, 0f, 0f, 1);
 RenderSettings.ambientEquatorColor = new Color(0f, 0f, 0f, 1f);
 RenderSettings.ambientLight = new Color(0.3f, 0.3f, 0.3f, 1f);
+globals.verbs = new List<verb>();
 globals.models = new List<Mesh>();
 globals.states = new List<string>();
 globals.sounds = new List<AudioClip>();
@@ -1900,7 +1971,16 @@ globals.players = new List<GameObject>();
 ships = new List<GameObject>();
 loadsettings();
 loaddb(getsetting("db"));
-runscript(getsetting("startscript"), "");
+string startscript = getsetting("startscript");
+verb startverb = findverb(startscript);
+if(startverb==null)
+{
+runscript(startscript, "", 1);
+}
+else
+{
+runscript(startverb.code, "", 0);
+}
 }
 public map spawnmap(string name, float x, float y, float z, float loadx, float loady, float loadz, float loadmaxx, float loadmaxy, float loadmaxz, string location)
 {
@@ -2031,6 +2111,7 @@ PlayerController player = globals.players[globals.curplayer].GetComponent<Player
 luaupdatefunction luaintp = new luaupdatefunction();
 luaintp.lua = new Lua();
 luaintp.mapname = mapname;
+luaintp.file = file;
 luaintp.name = functionname;
 luaintp.script = scriptname;
 luaintp.lua["updatefunction"] = luaintp;
@@ -2903,7 +2984,7 @@ inlist = 1;
 if(inlist==0)
 {
 removefunction(a);
-addfunction(a.script, a.name, a.mapname);
+addfunction(a.script, a.name, a.mapname, a.file);
 }
 }
 }
