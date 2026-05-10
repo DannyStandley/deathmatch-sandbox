@@ -1776,7 +1776,7 @@ newplayer = null;
 }
 if(dt=="map")
 {
-newmap = spawnmap(System.Convert.ToString(globals.maps.Count), 0, 0, 0, 0, 0, 0, 0, 0, 0, "");
+newmap = spawnmap(0, 0, 0, 0, 0, 0, 0, 0, 0, "");
 }
 if(dt=="maplocation")
 {
@@ -1987,10 +1987,10 @@ else
 runscript(startverb.code, "", 0);
 }
 }
-public map spawnmap(string name, float x, float y, float z, float loadx, float loady, float loadz, float loadmaxx, float loadmaxy, float loadmaxz, string location)
+public map spawnmap(float x, float y, float z, float loadx, float loady, float loadz, float loadmaxx, float loadmaxy, float loadmaxz, string location)
 {
 map newmap = new map();
-newmap.name = name;
+newmap.name = System.Convert.ToString(globals.maps.Count);
 newmap.movex = x;
 newmap.movey = y;
 newmap.movez = z;
