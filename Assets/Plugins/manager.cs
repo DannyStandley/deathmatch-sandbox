@@ -1465,6 +1465,10 @@ public string roomsound;
 public AudioSource roomsource;
 public GameObject foundship;
 public List<GameObject> ships;
+public List<verb> getverbs()
+{
+return globals.verbs;
+}
 public verb findverb(string vname)
 {
 foreach(verb a in globals.verbs)
