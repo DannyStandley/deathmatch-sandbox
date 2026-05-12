@@ -2057,7 +2057,15 @@ a.luafunction.Call();
 }
 catch(NLua.Exceptions.LuaScriptException ex)
 {
-runscript(findverb("system:handle_uncaught_error").code, ex.Message, 0);
+string origin = a.script;
+foreach(verb m in globals.verbs)
+{
+if(m.code==origin)
+{
+origin = m.name;
+}
+}
+runscript(findverb("system:handle_uncaught_error").code, ex.Message+"|"+origin, 0);
 removefunction(a);
 }
 }
@@ -2180,7 +2188,15 @@ newlua.DoString(scriptname);
 }
 catch(NLua.Exceptions.LuaScriptException ex)
 {
-runscript(findverb("system:handle_uncaught_error").code, ex.Message, 0);
+string origin = scriptname;
+foreach(verb a in globals.verbs)
+{
+if(a.code==scriptname)
+{
+origin = a.name;
+}
+}
+runscript(findverb("system:handle_uncaught_error").code, ex.Message+"|"+origin, 0);
 }
 newlua.Dispose();
 newlua = null;
@@ -2804,6 +2820,15 @@ globals.maps.Remove(newmap);
 public void addmaptoship(map newmap, ship addship)
 {
 addship.maps.Add(newmap);
+}
+public void removeship(GameObject obj)
+{
+foreach(map a in obj.GetComponent<ship>().maps)
+{
+removemap(a);
+}
+ships.Remove(obj);
+GameObject.Destroy(obj);
 }
 public void removeshipmap(ship remship, map remmap)
 {
