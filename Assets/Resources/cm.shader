@@ -12,7 +12,7 @@ Shader "ColonialMarines"
         
         [Header(Specular)]
         _Glossiness ("Glossiness (Wetness)", Range(0, 1)) = 0.8
-        _MetallicEdge ("Metallic Edge (Fresnel)", Range(0, 5)) = 2.0
+        _Metallic ("Metallic Edge (Fresnel)", Range(0, 5)) = 2.0
         _E3Power ("E3 Light Intensity", Float) = 1.0
         _ShadowIntensity("Intensity of shadows", Float) = 0.0
         _SpecPower("Sets the power of specular.", Float) = 0.0
@@ -47,7 +47,7 @@ Shader "ColonialMarines"
             sampler2D _MainTex;
             sampler2D _GrimeMap;
             float4 _FogColor;
-            float _FogIntensity, _MistDensity, _Glossiness, _MetallicEdge, _E3Power, _ShadowIntensity, _SpecPower;
+            float _FogIntensity, _MistDensity, _Glossiness, _Metallic, _E3Power, _ShadowIntensity, _SpecPower;
 
             v2f vert (appdata_base v) {
                 v2f o;
