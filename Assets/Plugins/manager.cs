@@ -2065,7 +2065,7 @@ if(m.code==origin)
 origin = m.name;
 }
 }
-runscript(findverb("system:handle_uncaught_error").code, ex.Message+"|"+origin, 0);
+runscript(findverb("system:handle_uncaught_error").code, ex.Message+"|"+origin+"|"+a.mapname, 0);
 removefunction(a);
 }
 }
@@ -2196,7 +2196,7 @@ if(a.code==scriptname)
 origin = a.name;
 }
 }
-runscript(findverb("system:handle_uncaught_error").code, ex.Message+"|"+origin, 0);
+runscript(findverb("system:handle_uncaught_error").code, ex.Message+"|"+origin+"|"+mapname, 0);
 }
 newlua.Dispose();
 newlua = null;
@@ -2825,6 +2825,7 @@ public void removeship(GameObject obj)
 {
 foreach(map a in obj.GetComponent<ship>().maps)
 {
+removestate("powered "+a.name);
 removemap(a);
 }
 ships.Remove(obj);
