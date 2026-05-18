@@ -1560,6 +1560,8 @@ newfile.WriteLine("endship");
 foreach(map a in globals.maps)
 {
 newfile.WriteLine("map");
+newfile.WriteLine("mapname");
+newfile.WriteLine(a.name);
 newfile.WriteLine("mapx");
 newfile.WriteLine(a.movex);
 newfile.WriteLine("mapy");
@@ -1781,6 +1783,10 @@ newplayer = null;
 if(dt=="map")
 {
 newmap = spawnmap(0, 0, 0, 0, 0, 0, 0, 0, 0, "");
+}
+if(dt=="mapname")
+{
+newmap.name = dbstr[a +1];
 }
 if(dt=="maplocation")
 {
