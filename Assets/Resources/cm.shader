@@ -14,7 +14,7 @@ Shader "ColonialMarines"
         _Glossiness ("Glossiness (Wetness)", Range(0, 1)) = 0.8
         _Metallic ("Metallic Edge (Fresnel)", Range(0, 5)) = 2.0
         _E3Power ("E3 Light Intensity", Float) = 1.0
-        _ShadowIntensity("Intensity of shadows", Float) = 0.0
+        _ShadowIntensity("Intensity of shadows", Float) = 1.0
         _SpecPower("Sets the power of specular.", Float) = 0.0
     }
 
