@@ -2011,6 +2011,7 @@ newmap.loadmaxx = loadmaxx;
 newmap.loadmaxy = loadmaxy;
 newmap.loadmaxz = loadmaxz;
 newmap.location = location;
+movemap(newmap, newmap.movex, newmap.movey, newmap.movez);
 globals.maps.Add(newmap);
 return newmap;
 }
