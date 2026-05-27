@@ -1128,7 +1128,15 @@ foreach(runscript a in currunscripts)
 {
 if(System.Convert.ToInt64(foundmap.x +orgx)>=a.x&&System.Convert.ToInt64(foundmap.x +orgx)<=a.maxx&&System.Convert.ToInt64(foundmap.y +orgy)>=a.y&&System.Convert.ToInt64(foundmap.y +orgy)<=a.maxy&&System.Convert.ToInt64(foundmap.z +orgz)>=a.z&&System.Convert.ToInt64(foundmap.z +orgz)<=a.maxz)
 {
+verb foundverb = gamemanager.findverb(a.script);
+if(foundverb==null)
+{
 gamemanager.runscript(a.script, a.mapname);
+}
+else
+{
+gamemanager.runscript(foundverb.code, a.mapname, 0);
+}
 }
 }
 }
