@@ -15,6 +15,7 @@ using System.Runtime.InteropServices;
 using NLua;
 public class verb
 {
+public string db = "";
 public string name = "";
 public string type = "";
 public string code = "";
@@ -686,6 +687,7 @@ return globals.mapobjects;
 }
 public class ship : MonoBehaviour
 {
+public string db = "";
 public double galx = 0f;
 public double galy = 0f;
 public double galz = 0f;
@@ -848,6 +850,7 @@ source.pitch = 1f;
 }
 public class PlayerController : MonoBehaviour
 {
+public string db = "";
 public string area = "";
 public map foundmap;
 public float orgx = 0f;
@@ -1380,6 +1383,7 @@ public LuaFunction luafunction;
 }
 public class map
 {
+public string db = "";
 public List<string> states;
 public string location = "";
 public int loaded = 0;
@@ -1512,6 +1516,8 @@ newfile.WriteLine(a);
 }
 foreach(verb a in globals.verbs)
 {
+if(a.db==db)
+{
 newfile.WriteLine("verb");
 newfile.WriteLine("verbname");
 newfile.WriteLine(a.name);
@@ -1522,9 +1528,12 @@ newfile.WriteLine(a.code);
 newfile.WriteLine("endverbcode");
 newfile.WriteLine("endverb");
 }
+}
 foreach(GameObject a in ships)
 {
 ship starship = a.GetComponent<ship>();
+if(starship.db==db)
+{
 newfile.WriteLine("ship");
 newfile.WriteLine("shipname");
 newfile.WriteLine(starship.shipname);
@@ -1565,7 +1574,10 @@ newfile.WriteLine(m);
 }
 newfile.WriteLine("endship");
 }
+}
 foreach(map a in globals.maps)
+{
+if(a.db==db)
 {
 newfile.WriteLine("map");
 newfile.WriteLine("mapname");
@@ -1597,9 +1609,12 @@ newfile.WriteLine(m);
 }
 newfile.WriteLine("endmap");
 }
+}
 foreach(GameObject a in globals.players)
 {
 PlayerController newplayer = a.GetComponent<PlayerController>();
+if(newplayer.db==db)
+{
 newfile.WriteLine("char");
 newfile.WriteLine("charname");
 newfile.WriteLine(newplayer.playername);
@@ -1619,6 +1634,7 @@ newfile.WriteLine("charstate");
 newfile.WriteLine(m);
 }
 newfile.WriteLine("endchar");
+}
 }
 newfile.Flush();
 newfile.Close();
@@ -1644,6 +1660,7 @@ addstate(dbstr[a +1]);
 if(dt=="verb")
 {
 newverb = addverb();
+newverb.db = db;
 }
 if(dt=="verbname")
 {
@@ -1674,6 +1691,7 @@ newverb = null;
 if(dt=="ship")
 {
 newship = createship();
+newship.db = db;
 }
 if(dt=="shipname")
 {
@@ -1755,6 +1773,7 @@ newship = null;
 if(dt=="char")
 {
 newplayer = createplayer();
+newplayer.db = db;
 }
 if(dt=="charname")
 {
@@ -1791,6 +1810,7 @@ newplayer = null;
 if(dt=="map")
 {
 newmap = spawnmap(0, 0, 0, 0, 0, 0, 0, 0, 0, "");
+newmap.db = db;
 }
 if(dt=="mapname")
 {
