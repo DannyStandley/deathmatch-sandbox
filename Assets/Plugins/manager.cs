@@ -1437,6 +1437,7 @@ public string value = "";
 
 public static class globals
 {
+public static List<string> statedbs;
 public static List<verb> verbs;
 public static string initdir;
 public static List<Mesh> models;
@@ -1509,10 +1510,13 @@ if(System.IO.File.Exists(globals.initdir+"/../"+db)==true)
 System.IO.File.Delete(globals.initdir+"/../"+db);
 }
 var newfile = System.IO.File.CreateText(globals.initdir+"/../"+db);
-foreach(string a in globals.states)
+for(int a=0; a<globals.states.Count; ++a)
+{
+if(globals.statedbs[a]==db)
 {
 newfile.WriteLine("gstate");
-newfile.WriteLine(a);
+newfile.WriteLine(globals.states[a]);
+}
 }
 foreach(verb a in globals.verbs)
 {
@@ -1655,7 +1659,7 @@ for(int a=0; a<dbstr.Length; ++a)
 string dt = dbstr[a].Replace("\n", "").Replace("\r", "");
 if(dt=="gstate")
 {
-addstate(dbstr[a +1]);
+addstate(dbstr[a +1], db);
 }
 if(dt=="verb")
 {
@@ -1997,6 +2001,7 @@ RenderSettings.ambientEquatorColor = new Color(0f, 0f, 0f, 1f);
 RenderSettings.ambientLight = new Color(0.3f, 0.3f, 0.3f, 1f);
 globals.verbs = new List<verb>();
 globals.models = new List<Mesh>();
+globals.statedbs = new List<string>();
 globals.states = new List<string>();
 globals.sounds = new List<AudioClip>();
 globals.textures = new List<Texture2D>();
@@ -2860,7 +2865,7 @@ public void removeship(GameObject obj)
 {
 foreach(map a in obj.GetComponent<ship>().maps)
 {
-removestate("powered "+a.name);
+removestate("powered "+a.name, a.db);
 removemap(a);
 }
 ships.Remove(obj);
@@ -3180,23 +3185,30 @@ return a.Replace(statename+" ", "");
 }
 return "";
 }
-public void addstate(string statename)
+public void addstate(string statename, string db)
 {
 globals.states.Add(statename);
+globals.statedbs.Add(db);
 }
-public void removestate(string statename)
+public void removestate(string statename, string db)
 {
+int remdb = -1;
 List<String> removestates = new List<string>();
-foreach(string a in globals.states)
+for(int a=0; a<globals.states.Count; ++a)
 {
-if(a==statename)
+if(globals.states[a]==statename&&globals.statedbs[a]==db)
 {
-removestates.Add(a);
+removestates.Add(globals.states[a]);
+remdb = a;
 }
 }
 foreach(string a in removestates)
 {
 globals.states.Remove(a);
+}
+if(remdb!=-1)
+{
+globals.statedbs.Remove(globals.statedbs[remdb]);
 }
 }
 public int checkstate(string statename)
