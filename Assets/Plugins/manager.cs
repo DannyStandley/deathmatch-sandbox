@@ -2865,7 +2865,6 @@ public void removeship(GameObject obj)
 {
 foreach(map a in obj.GetComponent<ship>().maps)
 {
-removestate("powered "+a.name, a.db);
 removemap(a);
 }
 ships.Remove(obj);
