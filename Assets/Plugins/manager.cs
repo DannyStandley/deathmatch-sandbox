@@ -1643,8 +1643,12 @@ newfile.WriteLine("endchar");
 newfile.Flush();
 newfile.Close();
 }
-public void loaddb(string db)
+public void loaddb(string db, string tempdb="")
 {
+if(tempdb=="")
+{
+tempdb = db;
+}
 verb newverb = null;
 ship newship = null;
 PlayerController newplayer = null;
@@ -1659,12 +1663,12 @@ for(int a=0; a<dbstr.Length; ++a)
 string dt = dbstr[a].Replace("\n", "").Replace("\r", "");
 if(dt=="gstate")
 {
-addstate(dbstr[a +1], db);
+addstate(dbstr[a +1], tempdb);
 }
 if(dt=="verb")
 {
 newverb = addverb();
-newverb.db = db;
+newverb.db = tempdb;
 }
 if(dt=="verbname")
 {
@@ -1695,7 +1699,7 @@ newverb = null;
 if(dt=="ship")
 {
 newship = createship();
-newship.db = db;
+newship.db = tempdb;
 }
 if(dt=="shipname")
 {
@@ -1777,7 +1781,7 @@ newship = null;
 if(dt=="char")
 {
 newplayer = createplayer();
-newplayer.db = db;
+newplayer.db = tempdb;
 }
 if(dt=="charname")
 {
@@ -1814,7 +1818,7 @@ newplayer = null;
 if(dt=="map")
 {
 newmap = spawnmap(0, 0, 0, 0, 0, 0, 0, 0, 0, "");
-newmap.db = db;
+newmap.db = tempdb;
 }
 if(dt=="mapname")
 {
