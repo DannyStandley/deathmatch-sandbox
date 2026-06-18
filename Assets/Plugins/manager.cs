@@ -1392,12 +1392,6 @@ public List<runscript> runscripts;
 public map orgmap;
 public string name = "";
 public List<GameObject> mapobjects;
-public float loadx = 0f;
-public float loady = 0f;
-public float loadz = 0f;
-public float loadmaxx = 0f;
-public float loadmaxy = 0f;
-public float loadmaxz = 0f;
 public float x = 0f;
 public float y = 0f;
 public float z = 0f;
@@ -1592,18 +1586,6 @@ newfile.WriteLine("mapy");
 newfile.WriteLine(a.movey);
 newfile.WriteLine("mapz");
 newfile.WriteLine(a.movez);
-newfile.WriteLine("maploadx");
-newfile.WriteLine(a.loadx);
-newfile.WriteLine("maploady");
-newfile.WriteLine(a.loady);
-newfile.WriteLine("maploadz");
-newfile.WriteLine(a.loadz);
-newfile.WriteLine("maploadmaxx");
-newfile.WriteLine(a.loadmaxx);
-newfile.WriteLine("maploadmaxy");
-newfile.WriteLine(a.loadmaxy);
-newfile.WriteLine("maploadmaxz");
-newfile.WriteLine(a.loadmaxz);
 newfile.WriteLine("maplocation");
 newfile.WriteLine(a.location);
 foreach(string m in a.states)
@@ -1817,7 +1799,7 @@ newplayer = null;
 }
 if(dt=="map")
 {
-newmap = spawnmap(0, 0, 0, 0, 0, 0, 0, 0, 0, "");
+newmap = spawnmap(0, 0, 0, "");
 newmap.db = tempdb;
 }
 if(dt=="mapname")
@@ -1839,30 +1821,6 @@ newmap.movey = System.Convert.ToSingle(dbstr[a +1]);
 if(dt=="mapz")
 {
 newmap.movez = System.Convert.ToSingle(dbstr[a +1]);
-}
-if(dt=="maploadx")
-{
-newmap.loadx = System.Convert.ToSingle(dbstr[a +1]);
-}
-if(dt=="maploady")
-{
-newmap.loady = System.Convert.ToSingle(dbstr[a +1]);
-}
-if(dt=="maploadz")
-{
-newmap.loadz = System.Convert.ToSingle(dbstr[a +1]);
-}
-if(dt=="maploadmaxx")
-{
-newmap.loadmaxx = System.Convert.ToSingle(dbstr[a +1]);
-}
-if(dt=="maploadmaxy")
-{
-newmap.loadmaxy = System.Convert.ToSingle(dbstr[a +1]);
-}
-if(dt=="maploadmaxz")
-{
-newmap.loadmaxz = System.Convert.ToSingle(dbstr[a +1]);
 }
 if(dt=="mapstate")
 {
@@ -2034,19 +1992,22 @@ else
 runscript(startverb.code, "", 0);
 }
 }
-public map spawnmap(float x, float y, float z, float loadx, float loady, float loadz, float loadmaxx, float loadmaxy, float loadmaxz, string location)
+public map spawnmap(float x, float y, float z, string location)
 {
 map newmap = new map();
-newmap.name = System.Convert.ToString(globals.maps.Count);
+string mname = System.Convert.ToString(globals.maps.Count);
+for(int a=0; a<globals.maps.Count -1; ++a)
+{
+if(findmap(System.Convert.ToString(a))==null)
+{
+mname = System.Convert.ToString(a);
+break;
+}
+}
+newmap.name = mname;
 newmap.movex = x;
 newmap.movey = y;
 newmap.movez = z;
-newmap.loadx = loadx;
-newmap.loady = loady;
-newmap.loadz = loadz;
-newmap.loadmaxx = loadmaxx;
-newmap.loadmaxy = loadmaxy;
-newmap.loadmaxz = loadmaxz;
 newmap.location = location;
 movemap(newmap, newmap.movex, newmap.movey, newmap.movez);
 globals.maps.Add(newmap);
