@@ -13,6 +13,11 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Runtime.InteropServices;
 using NLua;
+public class gstate
+{
+public string name = "";
+public string db = "";
+}
 public class verb
 {
 public string db = "";
@@ -1431,7 +1436,6 @@ public string value = "";
 
 public static class globals
 {
-public static List<string> statedbs;
 public static List<verb> verbs;
 public static string initdir;
 public static List<Mesh> models;
@@ -1440,7 +1444,7 @@ public static string outputrate;
 public static string outputpitch;
 public static string outputmodule;
 public static string outputvoice;
-public static List<string> states;
+public static List<gstate> states;
 public static List<Texture2D> textures;
 public static List<location> locations;
 public static List<map> maps;
@@ -1504,12 +1508,12 @@ if(System.IO.File.Exists(globals.initdir+"/../"+db)==true)
 System.IO.File.Delete(globals.initdir+"/../"+db);
 }
 var newfile = System.IO.File.CreateText(globals.initdir+"/../"+db);
-for(int a=0; a<globals.states.Count; ++a)
+foreach(gstate a in globals.states)
 {
-if(globals.statedbs[a]==db)
+if(a.db==db)
 {
 newfile.WriteLine("gstate");
-newfile.WriteLine(globals.states[a]);
+newfile.WriteLine(a.name);
 }
 }
 foreach(verb a in globals.verbs)
@@ -1840,7 +1844,7 @@ public void deletedir(string dir)
 {
 System.IO.Directory.Delete(globals.initdir+"/../"+dir);
 }
-public List<string> getstates()
+public List<gstate> getstates()
 {
 return globals.states;
 }
@@ -1963,8 +1967,7 @@ RenderSettings.ambientEquatorColor = new Color(0f, 0f, 0f, 1f);
 RenderSettings.ambientLight = new Color(0.3f, 0.3f, 0.3f, 1f);
 globals.verbs = new List<verb>();
 globals.models = new List<Mesh>();
-globals.statedbs = new List<string>();
-globals.states = new List<string>();
+globals.states = new List<gstate>();
 globals.sounds = new List<AudioClip>();
 globals.textures = new List<Texture2D>();
 globals.locations = new List<location>();
@@ -3140,46 +3143,42 @@ return mat;
 }
 public string checkstatetext(string statename)
 {
-foreach(string a in globals.states)
+foreach(gstate a in globals.states)
 {
-if(a.Split(" ")[0]==statename)
+if(a.name.Split(" ")[0]==statename)
 {
-return a.Replace(statename+" ", "");
+return a.name.Replace(statename+" ", "");
 }
 }
 return "";
 }
 public void addstate(string statename, string db)
 {
-globals.states.Add(statename);
-globals.statedbs.Add(db);
+gstate nstate = new gstate();
+nstate.name = statename;
+nstate.db = db;
+globals.states.Add(nstate);
 }
 public void removestate(string statename, string db)
 {
-int remdb = -1;
-List<String> removestates = new List<string>();
-for(int a=0; a<globals.states.Count; ++a)
+List<gstate> removestates = new List<gstate>();
+foreach(gstate a in globals.states)
 {
-if(globals.states[a]==statename&&globals.statedbs[a]==db)
+if(a.name==statename&&a.db==db)
 {
-removestates.Add(globals.states[a]);
-remdb = a;
+removestates.Add(a);
 }
 }
-foreach(string a in removestates)
+foreach(gstate a in removestates)
 {
 globals.states.Remove(a);
-}
-if(remdb!=-1)
-{
-globals.statedbs.Remove(globals.statedbs[remdb]);
 }
 }
 public int checkstate(string statename)
 {
-foreach(string a in globals.states)
+foreach(gstate a in globals.states)
 {
-if(a==statename)
+if(a.name==statename)
 {
 return 1;
 }
