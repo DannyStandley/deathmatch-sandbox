@@ -1618,6 +1618,8 @@ newfile.WriteLine("charlocation");
 newfile.WriteLine(newplayer.location);
 newfile.WriteLine("chartheta");
 newfile.WriteLine(newplayer.theta);
+newfile.WriteLine("charztheta");
+newfile.WriteLine(newplayer.ztheta);
 foreach(string m in newplayer.states)
 {
 newfile.WriteLine("charstate");
@@ -1792,6 +1794,10 @@ newplayer.orgz = System.Convert.ToSingle(dbstr[a +1]);
 if(dt=="chartheta")
 {
 newplayer.theta = System.Convert.ToSingle(dbstr[a +1]);
+}
+if(dt=="charztheta")
+{
+newplayer.ztheta = System.Convert.ToSingle(dbstr[a +1]);
 }
 if(dt=="charstate")
 {
