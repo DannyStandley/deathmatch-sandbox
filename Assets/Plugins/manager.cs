@@ -47,6 +47,9 @@ gameObject.GetComponent<AudioHighPassFilter>().enabled = false;
 gameObject.AddComponent<AudioDistortionFilter>();
 gameObject.GetComponent<AudioDistortionFilter>().distortionLevel = 0.5f;
 gameObject.GetComponent<AudioDistortionFilter>().enabled = false;
+source.rolloffMode = AudioRolloffMode.Linear;
+source.minDistance = 1;
+source.maxDistance = 50;
 if(looping==1)
 {
 source.loop = true;
@@ -513,6 +516,9 @@ source.loop = true;
 source.Play();
 source.spatialBlend = 1;
 source.dopplerLevel = 0f;
+source.rolloffMode = AudioRolloffMode.Linear;
+source.minDistance = 1;
+source.maxDistance = 50;
 }
 public void attachtext(GameObject obj, string text, float charsize)
 {
