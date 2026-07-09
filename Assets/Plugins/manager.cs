@@ -1567,6 +1567,8 @@ newfile.WriteLine("shipdesiredpower");
 newfile.WriteLine(starship.desiredpower);
 newfile.WriteLine("shippitch");
 newfile.WriteLine(starship.pitch);
+newfile.WriteLine("shipacc");
+newfile.WriteLine(starship.acc);
 newfile.WriteLine("shipgalx");
 newfile.WriteLine(starship.galx);
 newfile.WriteLine("shipgaly");
