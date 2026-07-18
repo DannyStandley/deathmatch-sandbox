@@ -1867,7 +1867,7 @@ public blockpoint checkmove(float speed, float tempx, float tempy, float tempz)
 luafunctions luaf = gameObject.GetComponent<luafunctions>();
 foreach(blockpoint a in globals.blockpoints)
 {
-if(a.active==1&&luaf.getdistance(tempx, tempy, tempz, a.x, a.y, a.z)<=0.53 +(0.001 *speed))
+if(a.active==1&&luaf.getdistance(tempx, tempy, tempz, a.x, a.y, a.z)<=0.55 +(0.001 *speed))
 {
 return a;
 }
