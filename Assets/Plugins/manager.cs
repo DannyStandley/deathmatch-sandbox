@@ -2073,6 +2073,12 @@ foreach(luaupdatefunction a in globals.updatefunctions)
 {
 if(a!=null&&a.luafunction!=null)
 {
+if(getsetting("debug")=="on")
+{
+a.luafunction.Call();
+}
+if(getsetting("debug")=="off")
+{
 try
 {
 a.luafunction.Call();
@@ -2089,6 +2095,7 @@ origin = m.name;
 }
 runscript(findverb("system:handle_uncaught_error").code, ex.Message+"|"+origin+"|"+a.mapname, 0);
 removefunction(a);
+}
 }
 }
 }
